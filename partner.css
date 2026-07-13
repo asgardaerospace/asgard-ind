@@ -1,0 +1,89 @@
+/* ============================================================
+   PARTNER WITH ASGARD — page-specific components
+   Builds on asgard.css tokens & primitives
+   ============================================================ */
+
+/* ---------- hero variant: supplier framing ---------- */
+.hero--partner .hero-grid{grid-template-columns:1.1fr .9fr}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hero-badges .hb{
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--t-mid);border:1px solid var(--ink-line);padding:8px 13px;background:#0a0e1680;
+  display:inline-flex;align-items:center;gap:9px;
+}
+.hero-badges .hb::before{content:"";width:5px;height:5px;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+
+/* supplier intake console floating in hero */
+.intake{
+  position:relative;border:1px solid var(--ink-line-2);
+  background:linear-gradient(180deg,#0b0f18,#080b12);box-shadow:0 40px 110px -54px #000;
+}
+.intake .intake-bar{display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--ink-line);background:#0c111b}
+.intake .intake-bar .ttl{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--t-mid)}
+.intake .intake-bar .live{margin-left:auto;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;color:var(--accent-hi);display:flex;align-items:center;gap:6px}
+.intake .intake-bar .live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:blink 1.6s infinite}
+.intake-body{padding:18px;display:grid;gap:12px}
+.intake-match{border:1px solid var(--ink-line);background:#0a0e16;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center;transition:.35s var(--ease)}
+.intake-match:hover{border-color:color-mix(in oklab,var(--accent) 45%,var(--ink-line))}
+.intake-match .mref{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;color:var(--accent-hi)}
+.intake-match .mtitle{font-size:.92rem;color:var(--t-hi);font-weight:600}
+.intake-match .mmeta{grid-column:1/2;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t-lo)}
+.intake-match .fit{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-hi);border:1px solid color-mix(in oklab,var(--gold) 40%,transparent);padding:5px 9px;justify-self:end}
+.intake-match .fit.hi{color:var(--accent-hi);border-color:color-mix(in oklab,var(--accent) 45%,transparent)}
+
+/* ============================================================
+   OPPORTUNITY PILLARS
+   ============================================================ */
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:62px}
+@media(max-width:820px){.pillars{grid-template-columns:1fr}}
+.pillar{
+  position:relative;border:1px solid var(--ink-line);
+  background:linear-gradient(180deg,#0c111b,#0a0e16);
+  padding:40px 36px;min-height:320px;display:flex;flex-direction:column;
+  transition:.42s var(--ease);overflow:hidden;
+}
+.pillar::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border:1px solid var(--ink-line);transform:rotate(45deg);opacity:.4;transition:.42s var(--ease)}
+.pillar:hover{border-color:var(--ink-line-2);transform:translateY(-4px)}
+.pillar:hover::after{border-color:color-mix(in oklab,var(--accent) 40%,var(--ink-line));opacity:.7}
+.pillar .corner{position:absolute;width:11px;height:11px;border-color:var(--accent);opacity:0;transition:opacity .4s var(--ease);z-index:2}
+.pillar:hover .corner{opacity:.9}
+.pillar .pn{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--accent-hi);position:relative;z-index:1}
+.pillar h3{font-size:clamp(1.5rem,2.4vw,1.95rem);font-stretch:112%;margin-top:20px;letter-spacing:-.025em;position:relative;z-index:1}
+.pillar .lead{color:var(--gold-hi);font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;margin-top:12px;text-transform:uppercase;position:relative;z-index:1}
+.pillar p{color:var(--t-mid);margin-top:16px;font-size:.96rem;line-height:1.62;position:relative;z-index:1;max-width:46ch}
+.pillar .metric{margin-top:auto;padding-top:26px;display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--ink-line);position:relative;z-index:1}
+.pillar .metric b{font-weight:800;font-size:2.1rem;color:var(--t-hi);font-stretch:112%;letter-spacing:-.02em}
+.pillar .metric b .u{color:var(--accent-hi);font-size:1.1rem}
+.pillar .metric span{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t-lo);line-height:1.5}
+
+/* ============================================================
+   ELIGIBILITY / WHO WE PARTNER WITH
+   ============================================================ */
+.elig{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:54px;border:1px solid var(--ink-line);background:linear-gradient(180deg,#0c111b,#0a0e16)}
+@media(max-width:820px){.elig{grid-template-columns:1fr}}
+.elig > div{padding:40px 38px}
+.elig > div:first-child{border-right:1px solid var(--ink-line)}
+@media(max-width:820px){.elig > div:first-child{border-right:none;border-bottom:1px solid var(--ink-line)}}
+.elig h4{font-size:1.3rem;font-stretch:110%;letter-spacing:-.02em}
+.elig .eh{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--t-lo);display:block;margin-bottom:14px}
+.checklist{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:15px}
+.checklist li{display:grid;grid-template-columns:auto 1fr;gap:15px;align-items:start;font-size:.95rem;color:var(--t);line-height:1.45}
+.checklist li b{color:var(--t-hi);font-weight:600}
+.checklist .ck{width:21px;height:21px;border:1px solid color-mix(in oklab,var(--accent) 55%,var(--ink-line));display:grid;place-items:center;color:var(--accent-hi);font-size:.72rem;flex-shrink:0;margin-top:1px}
+.checklist.is-grow .ck{border-color:color-mix(in oklab,var(--gold) 50%,var(--ink-line));color:var(--gold-hi)}
+
+/* ============================================================
+   APPLICATION / WHAT YOU'LL NEED
+   ============================================================ */
+.apply-need{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:54px auto 0;border:1px solid var(--ink-line);max-width:920px;text-align:left}
+@media(max-width:680px){.apply-need{grid-template-columns:1fr}}
+.apply-need .an{padding:26px 28px;border-right:1px solid var(--ink-line)}
+.apply-need .an:last-child{border-right:none}
+@media(max-width:680px){.apply-need .an{border-right:none;border-bottom:1px solid var(--ink-line)}.apply-need .an:last-child{border-bottom:none}}
+.apply-need .an .ai{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-hi)}
+.apply-need .an b{display:block;margin-top:10px;font-size:1.02rem;color:var(--t-hi);font-stretch:108%}
+.apply-need .an span{display:block;margin-top:6px;font-size:.84rem;color:var(--t-mid);line-height:1.5}
+
+/* timeline note under apply */
+.apply-note{margin-top:34px;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--t-lo)}
+.apply-note b{color:var(--accent-hi);font-weight:500}

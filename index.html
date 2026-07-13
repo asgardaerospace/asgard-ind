@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asgard Industries — The Industrial Base for Modern Defense</title>
+<meta name="description" content="Asgard turns a spec into fielded, qualified hardware — coordinating a national network of advanced manufacturers across air, sea, land, and space, powered by the Launchbelt orchestration platform.">
+<link rel="stylesheet" href="asgard.css">
+<style>
+/* ---------- homepage-specific (built on asgard.css) ---------- */
+.hero--home .hero-grid{grid-template-columns:1fr}
+.hero--home .hero-content{max-width:820px}
+.hero-media{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:.4;filter:saturate(1.06) contrast(1.02)}
+.hero--home::after{background:
+   linear-gradient(90deg,var(--bg) 6%,color-mix(in oklab,var(--bg) 42%,transparent) 52%,transparent 88%),
+   linear-gradient(0deg,var(--bg),transparent 58%),
+   radial-gradient(75% 65% at 72% 18%,transparent,var(--bg) 92%)}
+.hero--home #hero-net{opacity:.55;mix-blend-mode:screen}
+
+/* two ways in */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:58px}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.two .card{padding:clamp(26px,3vw,38px);display:flex;flex-direction:column}
+.two .card .pn{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-hi)}
+.two .card.gold .pn{color:var(--gold-hi)}
+.two .card h3{margin-top:14px;font-size:clamp(1.5rem,2.4vw,2rem);font-stretch:112%}
+.two .card > p{margin-top:14px;color:var(--t);font-size:.98rem;line-height:1.55;max-width:44ch}
+.two .card ul{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
+.two .card li{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--t);display:flex;gap:11px;align-items:baseline}
+.two .card li::before{content:"→";color:var(--accent-hi)}
+.two .card.gold li::before{color:var(--gold-hi)}
+.two .card .btn{margin-top:28px;align-self:flex-start}
+
+/* domain cards with real imagery */
+.domain-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:.5;transition:opacity .5s var(--ease),transform .6s var(--ease)}
+.domain:hover .domain-bg{opacity:.75;transform:scale(1.05)}
+.domain::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(175deg,rgba(6,8,13,.25) 20%,rgba(6,8,13,.72) 70%,var(--bg) 100%)}
+.domain .num,.domain h3,.domain p,.domain .tag{position:relative;z-index:2}
+.domain .tag{margin-top:14px}
+</style>
+</head>
+<body>
+
+<!-- ========================= NAV ========================= -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/asgard-symbol.png" alt="Asgard Industries">
+      <span class="wm">ASGARD<small>INDUSTRIES</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#what">What We Do</a>
+      <a href="#domains">Domains</a>
+      <a href="#how">Platform</a>
+      <a href="build.html">Build</a>
+      <a href="partner.html">Partner</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn--ghost" href="build.html">Start a Build <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ========================= HERO ========================= -->
+<section class="hero hero--home" id="top">
+  <img class="hero-media" src="assets/realms/air-3.png" alt="">
+  <canvas id="hero-net"></canvas>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow reveal">/ Advanced Defense Manufacturing</span>
+        <h1 class="display h-xl reveal" data-d="1">The industrial base for modern defense.</h1>
+        <p class="lede reveal" data-d="2">Asgard turns a spec into fielded, qualified hardware — coordinating a national network of advanced manufacturers across <b>air, sea, land, and space</b>. Powered by <b>Launchbelt</b>, our manufacturing orchestration platform.</p>
+        <div class="hero-cta reveal" data-d="3">
+          <a class="btn btn--primary" href="build.html">Start a Build <span class="arr">→</span></a>
+          <a class="btn" href="partner.html">Partner Your Shop <span class="arr">→</span></a>
+        </div>
+        <div class="hero-meta reveal" data-d="4">
+          <div class="m"><b>Agnostic</b><span>Any Process · Material · Shop</span></div>
+          <div class="m"><b>Compliant</b><span>Compliance Built Into The Build</span></div>
+          <div class="m"><b>Proto → Rate</b><span>Prototype To Full-Rate Production</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<!-- ========================= TICKER ========================= -->
+<div class="ticker">
+  <div class="track" id="ticker">
+    <span>Air</span><span>Sea</span><span>Land</span><span>Space</span>
+    <span>Technology Agnostic</span><span>Compliance Built In</span><span>Prototype To Full Rate</span>
+    <span>Embedded Engineering</span><span>Live Capacity Matching</span><span>Digital Traceability</span>
+    <span>Machining</span><span>Composites</span><span>Thermoplastics</span><span>Additive</span><span>Assembly &amp; Test</span>
+  </div>
+</div>
+
+<!-- ========================= 01 · WHAT WE DO ========================= -->
+<section class="section rule-top" id="what">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">/ 01 · What Asgard Does</span>
+      <h2 class="display h-lg reveal" data-d="1">One network. Two ways in.</h2>
+      <p class="lede reveal" data-d="2">Asgard is the coordinated industrial base for defense hardware. Bring us a design and we deliver finished, qualified hardware. Bring us a shop and we fill it with matched work. Both run on Launchbelt — one execution layer connecting engineers, suppliers, and operators.</p>
+    </div>
+    <div class="two">
+      <div class="card reveal" data-d="1">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <span class="pn">For OEMs, Primes &amp; Hardware Startups</span>
+        <h3 class="display">Build with Asgard</h3>
+        <p>Hand us the spec. We forge qualified, compliant hardware across the network — prototype to full rate, without standing up your own factory.</p>
+        <ul>
+          <li>Technology &amp; supplier agnostic</li>
+          <li>Compliance built into the spec</li>
+          <li>Quotes in days, not months</li>
+          <li>Near-zero capex to first units</li>
+        </ul>
+        <a class="btn btn--primary" href="build.html">Start a Build <span class="arr">→</span></a>
+      </div>
+      <div class="card gold reveal" data-d="2">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <span class="pn">For Suppliers &amp; Manufacturers</span>
+        <h3 class="display">Partner with Asgard</h3>
+        <p>Bring your shop into the network. Get pre-scoped, qualified work matched to your capacity and certifications, backed by embedded engineering.</p>
+        <ul>
+          <li>Matched demand, no cold RFQs</li>
+          <li>Live capacity utilization</li>
+          <li>Embedded engineering support</li>
+          <li>Digital traceability built in</li>
+        </ul>
+        <a class="btn" href="partner.html">Join the Network <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 02 · DOMAINS ========================= -->
+<section class="section section--alt rule-top" id="domains">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">/ 02 · Every Operating Domain</span>
+      <h2 class="display h-lg reveal" data-d="1">Hardware for air, sea, land, and space.</h2>
+      <p class="lede reveal" data-d="2">One coordinated base spanning every domain of modern defense — from stealth airframes and autonomous vessels to robotic manufacturing and orbital systems.</p>
+    </div>
+    <div class="domains reveal" data-d="2">
+      <div class="domain" data-domain="air">
+        <img class="domain-bg" src="assets/realms/air-2.png" alt="">
+        <canvas></canvas>
+        <span class="num">D-01</span>
+        <h3>Air</h3>
+        <p>Stealth airframes, uncrewed systems, and coordinated air networks.</p>
+        <span class="tag">Aerospace · UAS · Avionics</span>
+      </div>
+      <div class="domain" data-domain="sea">
+        <img class="domain-bg" src="assets/realms/sea-3.png" alt="">
+        <canvas></canvas>
+        <span class="num">D-02</span>
+        <h3>Sea</h3>
+        <p>Naval craft, autonomous vessels, and distributed maritime sensing.</p>
+        <span class="tag">Naval · Autonomy · Sensing</span>
+      </div>
+      <div class="domain" data-domain="land">
+        <img class="domain-bg" src="assets/realms/land-3.png" alt="">
+        <canvas></canvas>
+        <span class="num">D-03</span>
+        <h3>Land</h3>
+        <p>Robotic manufacturing, ground platforms, and precision robotics.</p>
+        <span class="tag">Robotics · Ground · Manufacturing</span>
+      </div>
+      <div class="domain" data-domain="space">
+        <img class="domain-bg" src="assets/realms/space-3.png" alt="">
+        <canvas></canvas>
+        <span class="num">D-04</span>
+        <h3>Space</h3>
+        <p>Satellites, orbital systems, and persistent space infrastructure.</p>
+        <span class="tag">Orbital · Satellites · Infra</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 03 · HOW LAUNCHBELT WORKS ========================= -->
+<section class="section rule-top" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow eyebrow--gold reveal">/ 03 · How Launchbelt Works</span>
+      <h2 class="display h-lg reveal" data-d="1">From spec to fielded hardware.</h2>
+      <p class="lede reveal" data-d="2">Submit one model. Launchbelt makes it manufacturable, writes compliance into the build, decomposes it into work packages, and routes each to a qualified shop with open capacity — tracked end to end in a single thread.</p>
+    </div>
+    <div class="os-stack">
+      <div class="os-flow">
+        <div class="os-node reveal" data-d="1"><span class="os-i">01</span><div><h4>Ingest the Spec</h4><p>Requirements, drawings, models, materials, and volumes — concept sketch or release-ready package.</p></div><span class="badge">Intake</span></div>
+        <div class="os-connector"><div class="pulse"></div></div>
+        <div class="os-node reveal" data-d="1"><span class="os-i">02</span><div><h4>Design for Manufacture</h4><p>Embedded engineering makes the design producible against real capability, tooling, and materials.</p></div><span class="badge">Engineering</span></div>
+        <div class="os-connector"><div class="pulse"></div></div>
+        <div class="os-node is-core reveal" data-d="1"><span class="os-i">03</span><div><h4>Compliance Built In</h4><p>AS9100, ITAR, Nadcap, and program gates written into the build and verified at every step.</p></div><span class="badge">Core Step</span></div>
+        <div class="os-connector"><div class="pulse"></div></div>
+        <div class="os-node reveal" data-d="1"><span class="os-i">04</span><div><h4>Match to Capacity</h4><p>Launchbelt decomposes the build and routes each work package to qualified shops with open capacity.</p></div><span class="badge">Sourcing</span></div>
+        <div class="os-connector"><div class="pulse"></div></div>
+        <div class="os-node reveal" data-d="1"><span class="os-i">05</span><div><h4>Prototype to Rate</h4><p>Build and iterate fast, then ramp from low-rate initial production into full rate on the same network.</p></div><span class="badge">Production</span></div>
+        <div class="os-connector"><div class="pulse"></div></div>
+        <div class="os-node reveal" data-d="1"><span class="os-i">06</span><div><h4>Deliver &amp; Trace</h4><p>Fielded hardware with full genealogy from raw material to delivered assembly, auditable on demand.</p></div><span class="badge">Delivery</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 04 · PLATFORM CONSOLE ========================= -->
+<section class="section section--alt rule-top" id="launchbelt">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow reveal">/ 04 · The Launchbelt Platform</span>
+        <h2 class="display h-lg reveal" data-d="1">One system of record for every program.</h2>
+        <p class="lede reveal" data-d="2">Launchbelt is the software layer beneath the network. It scopes builds, attaches compliance, matches capacity, and tracks every operation from raw material to delivered part — visible to builders and suppliers in one live thread.</p>
+        <ul class="feature-list reveal" data-d="3">
+          <li><span class="fi">01</span><div><b>Instant RFQ Scoping</b><span>Submit a spec and get it scoped, priced, and matched to capacity in days.</span></div></li>
+          <li><span class="fi">02</span><div><b>Constraint Orchestration</b><span>One model, decomposed into coordinated work packages across the network.</span></div></li>
+          <li><span class="fi">03</span><div><b>Compliance &amp; Specs Built-In</b><span>Every requirement tracked green to delivery, with evidence captured as you build.</span></div></li>
+          <li><span class="fi">04</span><div><b>Live Capacity Matching</b><span>Qualified shops and open hours sequenced against real demand.</span></div></li>
+          <li><span class="fi">05</span><div><b>Digital Traceability</b><span>Full genealogy from raw material to fielded hardware, auditable on demand.</span></div></li>
+        </ul>
+      </div>
+      <div class="reveal" data-d="2">
+        <div class="window">
+          <div class="window-bar">
+            <div class="dots"><i></i><i></i><i></i></div>
+            <span class="ttl">launchbelt · execution layer</span>
+            <span class="live">Live</span>
+          </div>
+          <div class="window-body">
+            <div class="lb-row">
+              <div class="lb-tile"><div class="lab">Active Programs</div><div class="val accent" data-count="4">0</div>
+                <div class="lb-bars" id="lb-bars"></div></div>
+              <div class="lb-tile"><div class="lab">Work Packages</div><div class="val" data-count="12">0</div></div>
+              <div class="lb-tile"><div class="lab">In Scoping</div><div class="val gold" data-count="2">0</div></div>
+            </div>
+            <div class="lb-tile">
+              <div class="lab">Active Programs</div>
+              <div class="lb-line"><span>BUILD-4471 · UAV Airframe</span><span class="ok">▲ Prototype</span></div>
+              <div class="lb-line"><span>NAV-2208 · Machined Housings</span><span class="ok">▲ On Track</span></div>
+              <div class="lb-line"><span>RBT-3360 · Thermoplastic Brackets</span><span class="gold">◆ Awaiting Material</span></div>
+              <div class="lb-line" style="border:none"><span>ORB-0915 · Bracket Sub-Assy</span><span class="ok">▲ Ahead</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 05 · WHY ASGARD ========================= -->
+<section class="section rule-top" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">/ 05 · Why Asgard</span>
+      <h2 class="display h-lg reveal" data-d="1">Built to move faster than the threat.</h2>
+      <p class="lede reveal" data-d="2">The industrial base is fragmented, slow, and capital-heavy. Asgard coordinates it into a single execution layer — so hardware ships faster, compliant, and without the cost of building it all yourself.</p>
+    </div>
+    <div class="diff-grid reveal" data-d="2">
+      <div class="diff"><span class="dn">01</span><h4>Faster to Quote</h4><p>Scoped, priced, and matched to capacity in days — instead of the months a fragmented supply chain takes.</p></div>
+      <div class="diff"><span class="dn">02</span><h4>Compliance Built In</h4><p>AS9100, ITAR, and Nadcap engineered into the build from the first line, not bolted on at the end.</p></div>
+      <div class="diff"><span class="dn">03</span><h4>Technology Agnostic</h4><p>Matched to the right process, material, and shop on the merits of the spec, not the limits of a single shop.</p></div>
+      <div class="diff"><span class="dn">04</span><h4>Near-Zero Capex</h4><p>Reach qualified units on existing infrastructure. Keep capital in the product, not the plant.</p></div>
+    </div>
+    <p class="kicker reveal" data-d="2" style="margin-top:44px">Capabilities On Tap</p>
+    <div class="forge-cap reveal" data-d="3">
+      <span class="chip">5-Axis Machining</span>
+      <span class="chip">Composite Layup</span>
+      <span class="chip">Thermoplastics</span>
+      <span class="chip">Sheet Metal &amp; Fabrication</span>
+      <span class="chip">Welding</span>
+      <span class="chip">Additive</span>
+      <span class="chip">Assembly &amp; Integration</span>
+      <span class="chip">NDT &amp; Test</span>
+      <span class="chip">Surface Treatment</span>
+      <span class="chip">Tooling</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 06 · MISSION / RESILIENCE ========================= -->
+<section class="section section--alt rule-top resilience" id="mission">
+  <canvas id="res-net"></canvas>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow reveal">/ 06 · The Mission</span>
+      <h2 class="display h-lg reveal" data-d="1">Rebuilding the industrial base.</h2>
+      <p class="lede reveal" data-d="2">Asgard coordinates distributed manufacturers into one execution layer, so demand can route around disruption and capacity scales with the mission. Every shop we add makes the base the whole country depends on stronger.</p>
+      <div class="hero-cta reveal" data-d="3"><a class="btn btn--primary" href="build.html">Start a Build <span class="arr">→</span></a></div>
+    </div>
+    <div class="res-stats reveal" data-d="2">
+      <div class="rs"><b>Every Domain</b><span>Air · Sea · Land · Space</span></div>
+      <div class="rs"><b>One Layer</b><span>Unified execution across the network</span></div>
+      <div class="rs"><b>Traceable</b><span>Genealogy from material to hardware</span></div>
+      <div class="rs"><b>Resilient</b><span>Demand routes around disruption</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CTA ========================= -->
+<section class="cta rule-top" id="engage">
+  <canvas id="cta-net"></canvas>
+  <div class="wrap">
+    <span class="eyebrow reveal">/ Engage</span>
+    <h2 class="display h-xl reveal" data-d="1">Build. Supply. Invest.</h2>
+    <div class="cta-actions reveal" data-d="2">
+      <a class="btn btn--primary" href="build.html">Start a Build <span class="arr">→</span></a>
+      <a class="btn" href="partner.html">Partner Your Shop <span class="arr">→</span></a>
+    </div>
+    <div class="cta-modes reveal" data-d="3">
+      <div class="cta-mode"><span class="cm">For Builders</span><b>Bring a spec →</b></div>
+      <div class="cta-mode"><span class="cm">For Suppliers</span><b>Bring a shop →</b></div>
+      <div class="cta-mode"><span class="cm">For Investors</span><b>Back the mission →</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= FOOTER ========================= -->
+<footer>
+  <div class="foot">
+    <div>
+      <a class="brand" href="index.html">
+        <img src="assets/asgard-symbol.png" alt="" style="width:36px;height:36px">
+        <span class="wm">ASGARD<small>INDUSTRIES</small></span>
+      </a>
+      <p class="foot-tag">The coordinated industrial base for modern defense — engineering, manufacturing, and digital execution across air, sea, land, and space.</p>
+    </div>
+    <div><h5>Company</h5><ul><li><a href="#what">What We Do</a></li><li><a href="#domains">Domains</a></li><li><a href="#how">Platform</a></li><li><a href="#mission">Mission</a></li></ul></div>
+    <div><h5>Build</h5><ul><li><a href="build.html">Start a Build</a></li><li><a href="build.html#capex">For Early Stage</a></li><li><a href="build.html#flow">Spec to Hardware</a></li><li><a href="build.html#engine">Orchestration</a></li></ul></div>
+    <div><h5>Partner</h5><ul><li><a href="partner.html">Join the Network</a></li><li><a href="partner.html#process">How It Works</a></li><li><a href="partner.html#fit">Who Fits</a></li><li><a href="partner.html#apply">Apply</a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Asgard Industries · Advanced Defense Manufacturing</span>
+    <span>Air · Sea · Land · Space</span>
+  </div>
+</footer>
+
+<script src="asgard.js"></script>
+<script>
+/* Failsafe: if the page isn't being painted (e.g. a backgrounded/embedded
+   tab), the reveal IntersectionObserver and count-up rAF never fire, which
+   would leave all content invisible. Show everything statically instead. */
+(function(){
+  function showAll(){
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(e){
+      e.style.transition='none'; e.classList.add('in');
+      e.style.opacity='1'; e.style.transform='none';
+    });
+    document.querySelectorAll('[data-count]').forEach(function(e){
+      e.textContent=e.dataset.count+(e.dataset.suffix||'');
+    });
+  }
+  if(document.visibilityState!=='visible') showAll();
+  // Safety net for any browser where the observer hasn't run shortly after load.
+  setTimeout(function(){
+    if(document.querySelectorAll('.reveal').length &&
+       !document.querySelectorAll('.reveal.in').length) showAll();
+  },1600);
+})();
+</script>
+</body>
+</html>

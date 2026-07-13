@@ -1,0 +1,10 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Raw image source dump (large; the images the site uses live in assets/realms/)
+/Images/
+
+# Dependencies / build output
+node_modules/
