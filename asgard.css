@@ -206,6 +206,7 @@ h1,h2,h3,h4{margin:0;color:var(--t-hi);font-weight:800;line-height:1.02;letter-s
    HERO
    ============================================================ */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:90px}
+.hero-media{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:.4;filter:saturate(1.06) contrast(1.02)}
 #hero-net{position:absolute;inset:0;z-index:0;width:100%;height:100%}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
@@ -244,12 +245,10 @@ h1,h2,h3,h4{margin:0;color:var(--t-hi);font-weight:800;line-height:1.02;letter-s
 /* ============================================================
    DOMAINS (Air/Sea/Land/Space)
    ============================================================ */
-.domains{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;border:1px solid var(--ink-line)}
-@media(max-width:880px){.domains{grid-template-columns:repeat(2,1fr)}}
+.domains{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:60px;border-top:1px solid var(--ink-line);border-left:1px solid var(--ink-line)}
+@media(max-width:1080px){.domains{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.domains{grid-template-columns:1fr}}
-.domain{position:relative;padding:34px 28px 30px;border-right:1px solid var(--ink-line);overflow:hidden;cursor:default;transition:.4s var(--ease);min-height:340px;display:flex;flex-direction:column}
-.domain:last-child{border-right:none}
-@media(max-width:880px){.domain:nth-child(2){border-right:none}.domain:nth-child(-n+2){border-bottom:1px solid var(--ink-line)}}
+.domain{position:relative;padding:34px 26px 30px;border-right:1px solid var(--ink-line);border-bottom:1px solid var(--ink-line);overflow:hidden;cursor:pointer;transition:.4s var(--ease);min-height:340px;display:flex;flex-direction:column}
 .domain canvas{position:absolute;inset:0;z-index:0;opacity:.55;transition:opacity .4s}
 .domain:hover{background:#0b1018}
 .domain:hover canvas{opacity:1}
