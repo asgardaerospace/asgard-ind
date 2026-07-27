@@ -12,6 +12,11 @@
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
+  /* ---------- hero video: respect reduced motion ---------- */
+  document.querySelectorAll('video.hero-media').forEach(v=>{
+    if(reduce){ v.removeAttribute('autoplay'); v.pause(); }
+  });
+
   /* ---------- mobile nav toggle ---------- */
   const navToggle = document.querySelector('.nav-toggle');
   if(navToggle){
