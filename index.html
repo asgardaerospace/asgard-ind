@@ -5,7 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Asgard Industries — The Industrial Base for Modern Defense</title>
 <meta name="description" content="Asgard turns a spec into fielded, qualified hardware — coordinating a national network of advanced manufacturers across air, sea, land, and space, powered by the Launchbelt orchestration platform.">
-<link rel="stylesheet" href="asgard.css">
+<link rel="canonical" href="https://asgardaerospace.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Asgard Industries">
+<meta property="og:title" content="Asgard Industries — The Industrial Base for Modern Defense">
+<meta property="og:description" content="From spec to fielded, qualified hardware — one coordinated network of advanced manufacturers across air, sea, land, and space.">
+<meta property="og:url" content="https://asgardaerospace.com/">
+<meta property="og:image" content="https://asgardaerospace.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/realms/air-3.webp" fetchpriority="high">
+<link rel="stylesheet" href="asgard.css?v=20260727">
 <style>
 /* ---------- homepage-specific (built on asgard.css) ---------- */
 .hero--home .hero-grid{grid-template-columns:1fr}
@@ -58,12 +72,13 @@
     <div class="nav-cta">
       <a class="btn btn--ghost" href="build.html">Start a Build <span class="arr">→</span></a>
     </div>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <!-- ========================= HERO ========================= -->
 <section class="hero hero--home" id="top">
-  <img class="hero-media" src="assets/realms/air-3.png" alt="">
+  <img class="hero-media" src="assets/realms/air-3.webp" alt="" fetchpriority="high" decoding="async">
   <canvas id="hero-net"></canvas>
   <div class="wrap">
     <div class="hero-grid">
@@ -145,7 +160,7 @@
     </div>
     <div class="domains reveal" data-d="2">
       <div class="domain" data-domain="air">
-        <img class="domain-bg" src="assets/realms/air-2.png" alt="">
+        <img class="domain-bg" src="assets/realms/air-2.webp" alt="" loading="lazy" decoding="async">
         <canvas></canvas>
         <span class="num">D-01</span>
         <h3>Air</h3>
@@ -153,7 +168,7 @@
         <span class="tag">Aerospace · UAS · Avionics</span>
       </div>
       <div class="domain" data-domain="sea">
-        <img class="domain-bg" src="assets/realms/sea-3.png" alt="">
+        <img class="domain-bg" src="assets/realms/sea-3.webp" alt="" loading="lazy" decoding="async">
         <canvas></canvas>
         <span class="num">D-02</span>
         <h3>Sea</h3>
@@ -161,7 +176,7 @@
         <span class="tag">Naval · Autonomy · Sensing</span>
       </div>
       <div class="domain" data-domain="land">
-        <img class="domain-bg" src="assets/realms/land-3.png" alt="">
+        <img class="domain-bg" src="assets/realms/land-3.webp" alt="" loading="lazy" decoding="async">
         <canvas></canvas>
         <span class="num">D-03</span>
         <h3>Land</h3>
@@ -169,7 +184,7 @@
         <span class="tag">Robotics · Ground · Manufacturing</span>
       </div>
       <div class="domain" data-domain="space">
-        <img class="domain-bg" src="assets/realms/space-3.png" alt="">
+        <img class="domain-bg" src="assets/realms/space-3.webp" alt="" loading="lazy" decoding="async">
         <canvas></canvas>
         <span class="num">D-04</span>
         <h3>Space</h3>
@@ -245,6 +260,7 @@
             </div>
           </div>
         </div>
+        <p class="mock-note">Illustrative console view · representative program data</p>
       </div>
     </div>
   </div>
@@ -310,9 +326,9 @@
       <a class="btn" href="partner.html">Partner Your Shop <span class="arr">→</span></a>
     </div>
     <div class="cta-modes reveal" data-d="3">
-      <div class="cta-mode"><span class="cm">For Builders</span><b>Bring a spec →</b></div>
-      <div class="cta-mode"><span class="cm">For Suppliers</span><b>Bring a shop →</b></div>
-      <div class="cta-mode"><span class="cm">For Investors</span><b>Back the mission →</b></div>
+      <a class="cta-mode" href="build.html"><span class="cm">For Builders</span><b>Bring a spec →</b></a>
+      <a class="cta-mode" href="partner.html"><span class="cm">For Suppliers</span><b>Bring a shop →</b></a>
+      <a class="cta-mode" href="mailto:contact@asgardaerospace.com?subject=Investor%20Inquiry"><span class="cm">For Investors</span><b>Back the mission →</b></a>
     </div>
   </div>
 </section>
@@ -326,18 +342,19 @@
         <span class="wm">ASGARD<small>INDUSTRIES</small></span>
       </a>
       <p class="foot-tag">The coordinated industrial base for modern defense — engineering, manufacturing, and digital execution across air, sea, land, and space.</p>
+      <a class="foot-mail" href="mailto:contact@asgardaerospace.com">contact@asgardaerospace.com</a>
     </div>
-    <div><h5>Company</h5><ul><li><a href="#what">What We Do</a></li><li><a href="#domains">Domains</a></li><li><a href="#how">Platform</a></li><li><a href="#mission">Mission</a></li></ul></div>
+    <div><h5>Company</h5><ul><li><a href="#what">What We Do</a></li><li><a href="#domains">Domains</a></li><li><a href="#how">Platform</a></li><li><a href="#mission">Mission</a></li><li><a href="mailto:contact@asgardaerospace.com">Contact</a></li></ul></div>
     <div><h5>Build</h5><ul><li><a href="build.html">Start a Build</a></li><li><a href="build.html#capex">For Early Stage</a></li><li><a href="build.html#flow">Spec to Hardware</a></li><li><a href="build.html#engine">Orchestration</a></li></ul></div>
     <div><h5>Partner</h5><ul><li><a href="partner.html">Join the Network</a></li><li><a href="partner.html#process">How It Works</a></li><li><a href="partner.html#fit">Who Fits</a></li><li><a href="partner.html#apply">Apply</a></li></ul></div>
   </div>
   <div class="foot-bottom">
     <span>© 2026 Asgard Industries · Advanced Defense Manufacturing</span>
-    <span>Air · Sea · Land · Space</span>
+    <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Air · Sea · Land · Space</span>
   </div>
 </footer>
 
-<script src="asgard.js"></script>
+<script src="asgard.js?v=20260727"></script>
 <script>
 /* Failsafe: if the page isn't being painted (e.g. a backgrounded/embedded
    tab), the reveal IntersectionObserver and count-up rAF never fire, which

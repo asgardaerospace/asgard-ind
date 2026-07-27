@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Images/
+
+Sitemap: https://asgardaerospace.com/sitemap.xml

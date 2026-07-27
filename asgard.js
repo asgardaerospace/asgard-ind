@@ -12,6 +12,18 @@
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
+  /* ---------- mobile nav toggle ---------- */
+  const navToggle = document.querySelector('.nav-toggle');
+  if(navToggle){
+    navToggle.addEventListener('click', ()=>{
+      const open = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.nav-links a').forEach(a=>{
+      a.addEventListener('click', ()=>{ nav.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); });
+    });
+  }
+
   /* ---------- ticker duplicate for seamless loop ---------- */
   const ticker = document.getElementById('ticker');
   if(ticker) ticker.innerHTML += ticker.innerHTML;
