@@ -81,7 +81,7 @@
   if(lbBars){
     for(let i=0;i<14;i++){const b=document.createElement('i');b.style.height='10%';lbBars.appendChild(b);}
   }
-  const lbWin = document.querySelector('#launchbelt .window');
+  const lbWin = document.querySelector('#launchbelt .window, #console .window');
   if(lbWin){
     const wio = new IntersectionObserver((es)=>{
       es.forEach(e=>{ if(!e.isIntersecting) return;
@@ -259,6 +259,9 @@
     document.querySelectorAll('[data-count]').forEach(function(e){
       e.textContent=e.dataset.count+(e.dataset.suffix||'');
     });
+    if(lbBars) [...lbBars.children].forEach(function(b){ b.style.height=(25+Math.random()*72)+'%'; });
+    var p1=document.getElementById('lb-prog');
+    if(p1 && !p1.style.width) p1.style.width='87%';
   }
   if(document.visibilityState!=='visible') showAll();
   setTimeout(function(){
