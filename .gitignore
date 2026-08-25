@@ -8,3 +8,5 @@ desktop.ini
 
 # Dependencies / build output
 node_modules/
+# generation source files — only the optimized .webp derivatives are deployed
+assets/**/*-raw.png

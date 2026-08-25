@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06080d">
 <title>Build With Asgard · From Your Spec to Fielded Hardware</title>
 <meta name="description" content="Hand Asgard the spec and get qualified, compliant defense hardware. Technology agnostic, compliance built in, prototype to full rate on a factory base that already exists.">
 <link rel="canonical" href="https://asgardaerospace.com/build.html">
@@ -17,33 +18,35 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="asgard.css?v=20260727c">
-<link rel="stylesheet" href="build.css?v=20260727c">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="asgard.css?v=20260825d">
+<link rel="stylesheet" href="build.css?v=20260825d">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- ========================= NAV ========================= -->
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a class="brand" href="index.html">
-      <img src="assets/asgard-symbol.png" alt="Asgard Industries">
+      <img src="assets/asgard-symbol-96.png" alt="" width="96" height="96">
       <span class="wm">ASGARD<small>INDUSTRIES</small></span>
     </a>
-    <nav class="nav-links">
-      <a href="#why">Why Asgard</a>
-      <a href="#flow">Spec to Hardware</a>
-      <a href="#engine">Orchestration</a>
-      <a href="#console">Program Console</a>
-      <a href="#agnostic">Agnostic</a>
-      <a href="#capex">Early Stage</a>
+    <nav class="nav-links" id="site-nav" aria-label="Primary">
+      <a href="systems.html">Systems</a>
+      <a href="capabilities.html">Capabilities</a>
+      <a href="launchbelt.html">Launchbelt</a>
+      <a href="forge.html">Forge</a>
+      <a href="domains.html">Domains</a>
+      <a href="company.html">Company</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--ghost" href="#start">Start a Build <span class="arr">→</span></a>
+      <a class="btn btn--ghost" href="mailto:contact@asgardaerospace.com?subject=Program%20Inquiry">Discuss a Program <span class="arr">→</span></a>
     </div>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
   </div>
 </header>
+<main id="main">
 
 <!-- ========================= HERO ========================= -->
 <section class="hero hero--build" id="top" data-screen-label="Hero">
@@ -393,12 +396,14 @@
 
 <!-- ========================= TAGLINE BAND ========================= -->
 <div class="tagband">
+  <img class="tagband-bg" src="assets/norse/runestone.webp" alt="" width="1600" height="914" loading="lazy" decoding="async">
   <div class="t reveal">Your Spec. <em>Our Industrial Base.</em></div>
   <div class="sub reveal" data-d="1">Agnostic build · compliance built in · prototype to full rate</div>
 </div>
 
 <!-- ========================= 06 · START A BUILD ========================= -->
 <section class="cta rule-top" id="start" data-screen-label="Start a Build">
+  <img class="cta-bg" src="assets/norse/aurora-forge.webp" alt="" width="1600" height="670" loading="lazy" decoding="async">
   <canvas id="cta-net"></canvas>
   <div class="wrap">
     <span class="eyebrow reveal">/ Start a Build</span>
@@ -417,19 +422,20 @@
 </section>
 
 <!-- ========================= FOOTER ========================= -->
+</main>
 <footer>
   <div class="foot">
     <div>
       <a class="brand" href="index.html">
-        <img src="assets/asgard-symbol.png" alt="" style="width:36px;height:36px">
+        <img src="assets/asgard-symbol-96.png" alt="" width="96" height="96" style="width:36px;height:36px">
         <span class="wm">ASGARD<small>INDUSTRIES</small></span>
       </a>
       <p class="foot-tag">Coordinating design, engineering, manufacturing, and digital execution across the advanced industrial base.</p>
       <a class="foot-mail" href="mailto:contact@asgardaerospace.com">contact@asgardaerospace.com</a>
     </div>
-    <div><h5>Build</h5><ul><li><a href="#why">Why Asgard</a></li><li><a href="#flow">Spec to Hardware</a></li><li><a href="#engine">Orchestration Engine</a></li><li><a href="#console">Program Console</a></li><li><a href="#agnostic">Agnostic by Design</a></li></ul></div>
-    <div><h5>Platform</h5><ul><li><a href="index.html#launchbelt">Launchbelt</a></li><li><a href="index.html#what">The Network</a></li><li><a href="index.html#how">How It Works</a></li><li><a href="domains.html">Domains</a></li><li><a href="partner.html">Partner Program</a></li></ul></div>
-    <div><h5>Engage</h5><ul><li><a href="#start">Start a Build</a></li><li><a href="mailto:contact@asgardaerospace.com?subject=Start%20a%20Build">Submit a Spec</a></li><li><a href="#capex">For Early Stage</a></li><li><a href="index.html">Main Site</a></li></ul></div>
+    <div><h3>Build</h3><ul><li><a href="#why">Why Asgard</a></li><li><a href="#flow">Spec to Hardware</a></li><li><a href="#engine">Orchestration Engine</a></li><li><a href="#console">Program Console</a></li><li><a href="#agnostic">Agnostic by Design</a></li></ul></div>
+    <div><h3>Platform</h3><ul><li><a href="launchbelt.html">Launchbelt</a></li><li><a href="company.html">The Network</a></li><li><a href="company.html#model">How It Works</a></li><li><a href="domains.html">Domains</a></li><li><a href="partner.html">Partner Program</a></li></ul></div>
+    <div><h3>Engage</h3><ul><li><a href="#start">Start a Build</a></li><li><a href="mailto:contact@asgardaerospace.com?subject=Start%20a%20Build">Submit a Spec</a></li><li><a href="#capex">For Early Stage</a></li><li><a href="index.html">Main Site</a></li></ul></div>
   </div>
   <div class="foot-bottom">
     <span>© 2026 Asgard Industries · Advanced Defense Manufacturing</span>
@@ -437,6 +443,6 @@
   </div>
 </footer>
 
-<script src="asgard.js?v=20260727c"></script>
+<script src="asgard.js?v=20260825d"></script>
 </body>
 </html>

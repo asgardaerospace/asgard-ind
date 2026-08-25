@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06080d">
 <title>Operating Domains · Asgard Industries</title>
 <meta name="description" content="Asgard builds qualified defense hardware across five operating domains: air, sea, land, space, and robotics, on one coordinated industrial base.">
 <link rel="canonical" href="https://asgardaerospace.com/domains.html">
@@ -17,9 +18,9 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/concepts/hero-c.webp" fetchpriority="high">
-<link rel="stylesheet" href="asgard.css?v=20260727c">
+<link rel="stylesheet" href="asgard.css?v=20260825d">
 <style>
 /* ---------- domains page ---------- */
 .hero--domains{min-height:72vh}
@@ -40,37 +41,40 @@
 .dom-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;transition:transform .7s var(--ease)}
 .dom-sec:hover .dom-media img{transform:scale(1.03)}
 .dom-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(6,8,13,.55));pointer-events:none}
-.dom-media .dm-tag{position:absolute;left:18px;bottom:14px;font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--t-hi)}
+.dom-media .dm-tag{position:absolute;left:18px;bottom:14px;font-family:var(--mono);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--t-hi)}
 .dom-copy h2{margin-top:18px}
 .dom-copy .lede{margin-top:18px;font-size:1.05rem}
 .dom-list{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:10px}
 .dom-list li{display:flex;gap:12px;align-items:baseline;font-size:.94rem;color:var(--t)}
-.dom-list li::before{content:"◆";color:var(--accent-hi);font-size:.6rem}
+.dom-list li::before{content:"◆";color:var(--accent-hi);font-size:.75rem}
 .dom-copy .forge-cap{margin-top:26px}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- ========================= NAV ========================= -->
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a class="brand" href="index.html">
-      <img src="assets/asgard-symbol.png" alt="Asgard Industries">
+      <img src="assets/asgard-symbol-96.png" alt="" width="96" height="96">
       <span class="wm">ASGARD<small>INDUSTRIES</small></span>
     </a>
-    <nav class="nav-links">
-      <a href="#air">Air</a>
-      <a href="#sea">Sea</a>
-      <a href="#land">Land</a>
-      <a href="#space">Space</a>
-      <a href="#robotics">Robotics</a>
+    <nav class="nav-links" id="site-nav" aria-label="Primary">
+      <a href="systems.html">Systems</a>
+      <a href="capabilities.html">Capabilities</a>
+      <a href="launchbelt.html">Launchbelt</a>
+      <a href="forge.html">Forge</a>
+      <a href="domains.html" aria-current="page">Domains</a>
+      <a href="company.html">Company</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--ghost" href="build.html">Start a Build <span class="arr">→</span></a>
+      <a class="btn btn--ghost" href="mailto:contact@asgardaerospace.com?subject=Program%20Inquiry">Discuss a Program <span class="arr">→</span></a>
     </div>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
   </div>
 </header>
+<main id="main">
 
 <!-- ========================= HERO ========================= -->
 <section class="hero hero--domains" id="top">
@@ -78,12 +82,13 @@
     <source src="assets/hero-domains.mp4" type="video/mp4">
   </video>
   <canvas id="hero-net"></canvas>
+  <svg class="rune-wm" style="right:6vw;top:16vh;width:min(22vw,240px);height:auto" viewBox="0 0 24 32" aria-hidden="true"><path d="M8 2v28M8 8l12 8M8 18l12 8"/></svg>
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-content">
-        <span class="eyebrow reveal">/ Operating Domains</span>
-        <h1 class="display h-xl reveal" data-d="1">Five domains. One industrial base.</h1>
-        <p class="lede reveal" data-d="2">Modern defense is fought and supplied across air, sea, land, space, and robotics. Asgard builds qualified hardware for all five on one coordinated network, with the same engineering, compliance, and execution layer behind every program.</p>
+        <span class="eyebrow reveal">/ The Five Realms</span>
+        <h1 class="display h-xl reveal" data-d="1">One Asgard architecture. Five mission domains.</h1>
+        <p class="lede reveal" data-d="2">Air, maritime, land, robotics, and space are where Asgard systems operate — not separate businesses. The same engineering, Launchbelt orchestration, and Forge execution model stands behind every domain; only the mission environment changes.</p>
       </div>
     </div>
   </div>
@@ -95,11 +100,11 @@
   <div class="wrap">
     <div class="dom-split">
       <div class="dom-media reveal">
-        <img src="assets/realms/air-3.webp" alt="Aerospace manufacturing" loading="lazy" decoding="async">
+        <img src="assets/realms/air-3.webp" width="1456" height="816" alt="Aerospace manufacturing" loading="lazy" decoding="async">
         <span class="dm-tag">Domain / Air</span>
       </div>
       <div class="dom-copy reveal" data-d="1">
-        <span class="eyebrow">/ Air</span>
+        <span class="eyebrow">/ Air</span><span class="rune-mark" style="margin-left:20px" aria-hidden="true"><svg viewBox="0 0 24 32"><path d="M12 30V4M12 15 4 6m8 9 8-9"/></svg>Algiz · Ward</span>
         <h2 class="display h-lg">Airframes and uncrewed systems.</h2>
         <p class="lede">Stealth airframes, UAS structures, and avionics-ready assemblies, built from composite, thermoplastic, and machined metallic parts, qualified for flight from the first article.</p>
         <ul class="dom-list">
@@ -122,11 +127,11 @@
   <div class="wrap">
     <div class="dom-split">
       <div class="dom-media reveal">
-        <img src="assets/realms/sea-3.webp" alt="Maritime systems" loading="lazy" decoding="async">
+        <img src="assets/realms/sea-3.webp" width="1456" height="816" alt="Maritime systems" loading="lazy" decoding="async">
         <span class="dm-tag">Domain / Sea</span>
       </div>
       <div class="dom-copy reveal" data-d="1">
-        <span class="eyebrow">/ Sea</span>
+        <span class="eyebrow">/ Sea</span><span class="rune-mark" style="margin-left:20px" aria-hidden="true"><svg viewBox="0 0 24 32"><path d="M9 30V2l10 10"/></svg>Laguz · Water</span>
         <h2 class="display h-lg">Naval craft and autonomous vessels.</h2>
         <p class="lede">Hull structures, machined housings, and sensor-ready assemblies for naval platforms and autonomous surface and subsurface vessels, built to marine and defense quality standards.</p>
         <ul class="dom-list">
@@ -149,11 +154,11 @@
   <div class="wrap">
     <div class="dom-split">
       <div class="dom-media reveal">
-        <img src="assets/realms/land-3.webp" alt="Ground platforms" loading="lazy" decoding="async">
+        <img src="assets/realms/land-3.webp" width="1456" height="812" alt="Ground platforms" loading="lazy" decoding="async">
         <span class="dm-tag">Domain / Land</span>
       </div>
       <div class="dom-copy reveal" data-d="1">
-        <span class="eyebrow">/ Land</span>
+        <span class="eyebrow">/ Land</span><span class="rune-mark" style="margin-left:20px" aria-hidden="true"><svg viewBox="0 0 24 32"><path d="M6 30V4l13 8v18"/></svg>Uruz · Strength</span>
         <h2 class="display h-lg">Ground platforms and tactical vehicles.</h2>
         <p class="lede">Structures, armor-ready fabrications, and precision drivetrain and chassis components for ground vehicles and expeditionary systems, produced at prototype pace and scaled to rate.</p>
         <ul class="dom-list">
@@ -176,11 +181,11 @@
   <div class="wrap">
     <div class="dom-split">
       <div class="dom-media reveal">
-        <img src="assets/realms/space-3.webp" alt="Orbital systems" loading="lazy" decoding="async">
+        <img src="assets/realms/space-3.webp" width="1456" height="607" alt="Orbital systems" loading="lazy" decoding="async">
         <span class="dm-tag">Domain / Space</span>
       </div>
       <div class="dom-copy reveal" data-d="1">
-        <span class="eyebrow">/ Space</span>
+        <span class="eyebrow">/ Space</span><span class="rune-mark" style="margin-left:20px" aria-hidden="true"><svg viewBox="0 0 24 32"><path d="M16 2 8 12l8 8-8 10"/></svg>Sowilo · Sun</span>
         <h2 class="display h-lg">Satellites and orbital hardware.</h2>
         <p class="lede">Bus structures, precision optical mounts, and flight hardware for satellites and persistent orbital infrastructure, built with the tolerances and traceability space programs demand.</p>
         <ul class="dom-list">
@@ -203,11 +208,11 @@
   <div class="wrap">
     <div class="dom-split">
       <div class="dom-media reveal">
-        <img src="assets/realms/robotics.webp" alt="Robotics and automation" loading="lazy" decoding="async">
+        <img src="assets/realms/robotics.webp" width="1456" height="816" alt="Robotics and automation" loading="lazy" decoding="async">
         <span class="dm-tag">Domain / Robotics</span>
       </div>
       <div class="dom-copy reveal" data-d="1">
-        <span class="eyebrow">/ Robotics</span>
+        <span class="eyebrow">/ Robotics</span><span class="rune-mark" style="margin-left:20px" aria-hidden="true"><svg viewBox="0 0 24 32"><path d="M12 30V4M4 12l8-8 8 8"/></svg>Tiwaz · Victory</span>
         <h2 class="display h-lg">Robotics and automation.</h2>
         <p class="lede">Robotic systems, automated production cells, and precision motion hardware, for programs that field robots and for factories that run on them. Robotics is its own domain at Asgard, with dedicated engineering behind it.</p>
         <ul class="dom-list">
@@ -239,19 +244,20 @@
 </section>
 
 <!-- ========================= FOOTER ========================= -->
+</main>
 <footer>
   <div class="foot">
     <div>
       <a class="brand" href="index.html">
-        <img src="assets/asgard-symbol.png" alt="" style="width:36px;height:36px">
+        <img src="assets/asgard-symbol-96.png" alt="" width="96" height="96" style="width:36px;height:36px">
         <span class="wm">ASGARD<small>INDUSTRIES</small></span>
       </a>
       <p class="foot-tag">The coordinated industrial base for modern defense: engineering, manufacturing, and digital execution across air, sea, land, space, and robotics.</p>
       <a class="foot-mail" href="mailto:contact@asgardaerospace.com">contact@asgardaerospace.com</a>
     </div>
-    <div><h5>Domains</h5><ul><li><a href="#air">Air</a></li><li><a href="#sea">Sea</a></li><li><a href="#land">Land</a></li><li><a href="#space">Space</a></li><li><a href="#robotics">Robotics</a></li></ul></div>
-    <div><h5>Platform</h5><ul><li><a href="index.html#launchbelt">Launchbelt</a></li><li><a href="index.html#what">The Network</a></li><li><a href="index.html#how">How It Works</a></li></ul></div>
-    <div><h5>Engage</h5><ul><li><a href="build.html">Start a Build</a></li><li><a href="partner.html">Join the Network</a></li><li><a href="mailto:contact@asgardaerospace.com">Contact</a></li></ul></div>
+    <div><h3>Domains</h3><ul><li><a href="#air">Air</a></li><li><a href="#sea">Sea</a></li><li><a href="#land">Land</a></li><li><a href="#space">Space</a></li><li><a href="#robotics">Robotics</a></li></ul></div>
+    <div><h3>Platform</h3><ul><li><a href="launchbelt.html">Launchbelt</a></li><li><a href="company.html">The Network</a></li><li><a href="company.html#model">How It Works</a></li></ul></div>
+    <div><h3>Engage</h3><ul><li><a href="build.html">Start a Build</a></li><li><a href="partner.html">Join the Network</a></li><li><a href="mailto:contact@asgardaerospace.com">Contact</a></li></ul></div>
   </div>
   <div class="foot-bottom">
     <span>© 2026 Asgard Industries · Advanced Defense Manufacturing</span>
@@ -259,6 +265,6 @@
   </div>
 </footer>
 
-<script src="asgard.js?v=20260727c"></script>
+<script src="asgard.js?v=20260825d"></script>
 </body>
 </html>

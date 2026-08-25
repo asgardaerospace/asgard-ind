@@ -12,9 +12,23 @@
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
-  /* ---------- hero video: respect reduced motion ---------- */
+  /* ---------- hero video: reduced motion + user pause control ---------- */
   document.querySelectorAll('video.hero-media').forEach(v=>{
+    v.setAttribute('aria-hidden','true');
     if(reduce){ v.removeAttribute('autoplay'); v.pause(); }
+    const hero = v.closest('.hero'); if(!hero) return;
+    const btn = document.createElement('button');
+    btn.className = 'media-toggle';
+    const sync = () => {
+      const playing = !v.paused;
+      btn.textContent = playing ? '❚❚' : '▶';
+      btn.setAttribute('aria-label', playing ? 'Pause background video' : 'Play background video');
+      btn.setAttribute('aria-pressed', String(!playing));
+    };
+    btn.addEventListener('click', ()=>{ v.paused ? v.play() : v.pause(); sync(); });
+    v.addEventListener('play', sync); v.addEventListener('pause', sync);
+    sync();
+    hero.appendChild(btn);
   });
 
   /* ---------- mobile nav toggle ---------- */
@@ -29,9 +43,14 @@
     });
   }
 
-  /* ---------- ticker duplicate for seamless loop ---------- */
+  /* ---------- ticker duplicate for seamless loop (decorative marquee:
+     hidden from assistive tech so items aren't announced twice) ---------- */
   const ticker = document.getElementById('ticker');
-  if(ticker) ticker.innerHTML += ticker.innerHTML;
+  if(ticker){
+    ticker.innerHTML += ticker.innerHTML;
+    const strip = ticker.closest('.ticker') || ticker;
+    strip.setAttribute('aria-hidden','true');
+  }
 
   /* ---------- reveal on scroll ---------- */
   const io = new IntersectionObserver((es)=>{
@@ -228,4 +247,22 @@
   if(heroLogo && !reduce){
     addEventListener('scroll',()=>{const y=window.scrollY;if(y<window.innerHeight){heroLogo.style.transform=`translateY(${y*0.12}px) rotate(${y*0.01}deg)`;}},{passive:true});
   }
+
+  /* ---------- failsafe: if the page isn't being painted (backgrounded or
+     embedded tab), the reveal observer and count-up rAF never fire, which
+     would leave content invisible. Show everything statically instead. ---------- */
+  function showAll(){
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(e){
+      e.style.transition='none'; e.classList.add('in');
+      e.style.opacity='1'; e.style.transform='none';
+    });
+    document.querySelectorAll('[data-count]').forEach(function(e){
+      e.textContent=e.dataset.count+(e.dataset.suffix||'');
+    });
+  }
+  if(document.visibilityState!=='visible') showAll();
+  setTimeout(function(){
+    if(document.querySelectorAll('.reveal').length &&
+       !document.querySelectorAll('.reveal.in').length) showAll();
+  },1600);
 })();
