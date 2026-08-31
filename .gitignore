@@ -15,3 +15,5 @@ assets/**/*-raw.png
 
 # Davies reference template (licensed theme files - do not publish)
 template/
+# generated image source files (large PNGs; only .webp derivatives deploy)
+assets/_gen/
