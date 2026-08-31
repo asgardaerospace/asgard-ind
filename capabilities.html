@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#06080d">
+<meta name="theme-color" content="#060708">
 <title>Capabilities · Asgard Industries</title>
 <meta name="description" content="Asgard capabilities organized around outcomes: engineer, build, verify, deploy, and sustain under controlled configuration, quality, and verification, across the full system lifecycle.">
 <link rel="canonical" href="https://asgardaerospace.com/capabilities.html">
@@ -18,12 +18,11 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="asgard.css?v=20260825f">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="asgard.css?v=20260831">
 <style>
-.hero--cap{min-height:60vh}
-.hero--cap .hero-grid{grid-template-columns:1fr}
-.hero--cap .hero-content{max-width:860px}
+.hero--cap{min-height:78svh}
+.hero--cap .hero-media{opacity:.45}
 </style>
 </head>
 <body>
@@ -35,35 +34,62 @@
       <img src="assets/asgard-symbol-96.png" alt="" width="96" height="96">
       <span class="wm">ASGARD<small>INDUSTRIES</small></span>
     </a>
-    <nav class="nav-links" id="site-nav" aria-label="Primary">
-      <a href="systems.html">Systems</a>
-      <a href="capabilities.html" aria-current="page">Capabilities</a>
-      <a href="launchbelt.html">Launchbelt</a>
-      <a href="forge.html">Forge</a>
-      <a href="domains.html">Domains</a>
-      <a href="company.html">Company</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="company.html"><span class="n">01</span>Company</a>
+      <a href="domains.html"><span class="n">02</span>Sectors</a>
+      <a href="systems.html"><span class="n">03</span>Infrastructure</a>
+      <a href="launchbelt.html"><span class="n">04</span>Launchbelt</a>
+      <a href="forge.html"><span class="n">05</span>Forge</a>
+      <a href="capabilities.html" aria-current="page"><span class="n">06</span>Capabilities</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--ghost" href="mailto:contact@asgardaerospace.com?subject=Program%20Inquiry">Discuss a Program <span class="arr">→</span></a>
+      <a class="btn btn--ghost" href="mailto:contact@asgardaerospace.com?subject=Program%20Inquiry">Start a Program <span class="arr">→</span></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu-screen">
+        <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>Menu
+      </button>
     </div>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
   </div>
 </header>
+
+<div class="menu-screen" id="menu-screen" aria-hidden="true">
+  <div class="menu-cols">
+    <nav aria-label="Menu">
+      <ul class="menu-list">
+        <li class="menu-item-stagger"><a href="company.html"><span class="mn">01 /</span><span class="mt">Company</span></a></li>
+        <li class="menu-item-stagger"><a href="domains.html"><span class="mn">02 /</span><span class="mt">Sectors</span></a></li>
+        <li class="menu-item-stagger"><a href="systems.html"><span class="mn">03 /</span><span class="mt">Autonomous Infrastructure</span></a></li>
+        <li class="menu-item-stagger"><a href="launchbelt.html"><span class="mn">04 /</span><span class="mt">Launchbelt</span></a></li>
+        <li class="menu-item-stagger"><a href="forge.html"><span class="mn">05 /</span><span class="mt">Forge</span></a></li>
+        <li class="menu-item-stagger"><a href="capabilities.html" aria-current="page"><span class="mn">06 /</span><span class="mt">Capabilities</span></a></li>
+        <li class="menu-item-stagger"><a href="mailto:contact@asgardaerospace.com?subject=Program%20Inquiry"><span class="mn">07 /</span><span class="mt">Contact</span></a></li>
+      </ul>
+    </nav>
+    <div class="menu-aside">
+      <p class="ma-tag">Asgard Industries develops, manufactures, integrates, deploys, and sustains advanced systems across air, maritime, land, robotics, space, and autonomous infrastructure.</p>
+      <a class="ma-mail" href="mailto:contact@asgardaerospace.com">contact@asgardaerospace.com</a>
+      <p class="kicker">Forging Brilliance, Destined by Design.</p>
+    </div>
+  </div>
+</div>
+
 <main id="main">
 
 <!-- ========================= HERO ========================= -->
 <section class="hero hero--cap" id="top">
-  <canvas id="hero-net"></canvas>
+  <img class="hero-media" src="assets/concepts/hero-b.webp" alt="" width="1456" height="816" fetchpriority="high" aria-hidden="true">
+  <div class="hero-frame" aria-hidden="true">
+    <span class="hf tr">Engineer · Build · Verify · Deploy · Sustain</span>
+  </div>
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-content">
-        <span class="eyebrow reveal">/ Capabilities</span>
+        <span class="eyebrow reveal">/ 06 — Capabilities</span>
         <h1 class="display h-xl reveal" data-d="1">Capability, organized around your outcome.</h1>
         <p class="lede reveal" data-d="2">Technical breadth supports the story. Every Asgard capability exists to move a system through one of five outcomes.</p>
       </div>
     </div>
   </div>
-  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+  <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
 </section>
 
 <!-- ========================= 01 · OUTCOMES ========================= -->
@@ -73,35 +99,42 @@
       <span class="eyebrow reveal">/ Five Outcomes</span>
       <h2 class="display h-lg reveal" data-d="1">Engineer. Build. Verify. Deploy. Sustain.</h2>
     </div>
-    <div class="outcomes reveal" data-d="2">
-      <div class="oc"><span class="oh">01</span><h3>Engineer the System</h3><p>Requirements, architecture, mechanical, electrical, robotics, controls, interfaces, verification planning.</p></div>
-      <div class="oc"><span class="oh">02</span><h3>Build the System</h3><p>Composites, thermoplastics, machining, fabrication, additive manufacturing, electrical assembly, robotic integration.</p></div>
-      <div class="oc"><span class="oh">03</span><h3>Verify the System</h3><p>Inspection, functional test, environmental test, interface verification, acceptance evidence.</p></div>
-      <div class="oc"><span class="oh">04</span><h3>Deploy the System</h3><p>Site integration, installation, commissioning, training, field configuration.</p></div>
-      <div class="oc"><span class="oh">05</span><h3>Sustain the System</h3><p>Maintenance, repair, spare parts, configuration updates, upgrades, reliability improvement.</p></div>
+    <div class="ledger">
+      <div class="ledger-row reveal"><span class="ln">01</span><h3>Engineer the System</h3><p>Requirements, architecture, mechanical, electrical, robotics, controls, interfaces, verification planning.</p></div>
+      <div class="ledger-row reveal"><span class="ln">02</span><h3>Build the System</h3><p>Composites, thermoplastics, machining, fabrication, additive manufacturing, electrical assembly, robotic integration.</p></div>
+      <div class="ledger-row reveal"><span class="ln">03</span><h3>Verify the System</h3><p>Inspection, functional test, environmental test, interface verification, acceptance evidence.</p></div>
+      <div class="ledger-row reveal"><span class="ln">04</span><h3>Deploy the System</h3><p>Site integration, installation, commissioning, training, field configuration.</p></div>
+      <div class="ledger-row reveal"><span class="ln">05</span><h3>Sustain the System</h3><p>Maintenance, repair, spare parts, configuration updates, upgrades, reliability improvement.</p></div>
     </div>
+    <p class="lede reveal" data-d="1" style="margin-top:34px;font-size:.95rem;color:var(--t-mid)">Asgard executes work through internal capability and the qualified Forge network — under one engineering, quality, and configuration standard.</p>
   </div>
 </section>
 
 <!-- ========================= 02 · LIFECYCLE ========================= -->
-<section class="section section--alt rule-top" id="lifecycle">
+<section class="section section--alt rule-top" id="lifecycle" style="padding-inline:0">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" style="padding-bottom:clamp(40px,4vw,64px)">
       <span class="eyebrow reveal">/ Lifecycle</span>
       <h2 class="display h-lg reveal" data-d="1">From mission requirement to operational system.</h2>
       <p class="lede reveal" data-d="2">Asgard remains involved across the lifecycle rather than handing the customer from one disconnected organization to another.</p>
     </div>
-    <div class="lifecycle reveal" data-d="2">
-      <div class="lc"><span class="n">01</span><h4>Mission Analysis</h4><p>Understand the operational problem.</p></div>
-      <div class="lc"><span class="n">02</span><h4>Requirements</h4><p>Define what the system must accomplish.</p></div>
-      <div class="lc"><span class="n">03</span><h4>Architecture</h4><p>Define functions, subsystems, and interfaces.</p></div>
-      <div class="lc"><span class="n">04</span><h4>Engineering</h4><p>Develop the physical system.</p></div>
-      <div class="lc"><span class="n">05</span><h4>Prototype</h4><p>Build and evaluate representative hardware.</p></div>
-      <div class="lc"><span class="n">06</span><h4>Industrialization</h4><p>Convert the design into controlled production.</p></div>
-      <div class="lc"><span class="n">07</span><h4>Manufacturing</h4><p>Execute released work through Forge.</p></div>
-      <div class="lc"><span class="n">08</span><h4>Integration + Verification</h4><p>Assemble, inspect, test, and verify.</p></div>
-      <div class="lc"><span class="n">09</span><h4>Deployment</h4><p>Install and commission the operational system.</p></div>
-      <div class="lc"><span class="n">10</span><h4>Sustainment</h4><p>Maintain configuration, readiness, repairs, and upgrades.</p></div>
+  </div>
+  <div class="hscroll-wrap reveal" data-d="1">
+    <div class="hscroll" tabindex="0" aria-label="System lifecycle, scroll horizontally">
+      <div class="hstation"><span class="hn">01</span><h3>Mission Analysis</h3><p>Understand the operational problem.</p></div>
+      <div class="hstation"><span class="hn">02</span><h3>Requirements</h3><p>Define what the system must accomplish.</p></div>
+      <div class="hstation"><span class="hn">03</span><h3>Architecture</h3><p>Define functions, subsystems, and interfaces.</p></div>
+      <div class="hstation"><span class="hn">04</span><h3>Engineering</h3><p>Develop the physical system.</p></div>
+      <div class="hstation"><span class="hn">05</span><h3>Prototype</h3><p>Build and evaluate representative hardware.</p></div>
+      <div class="hstation"><span class="hn">06</span><h3>Industrialization</h3><p>Convert the design into controlled production.</p></div>
+      <div class="hstation"><span class="hn">07</span><h3>Manufacturing</h3><p>Execute released work through Forge.</p></div>
+      <div class="hstation"><span class="hn">08</span><h3>Integration + Verification</h3><p>Assemble, inspect, test, and verify.</p></div>
+      <div class="hstation"><span class="hn">09</span><h3>Deployment</h3><p>Install and commission the operational system.</p></div>
+      <div class="hstation"><span class="hn">10</span><h3>Sustainment</h3><p>Maintain configuration, readiness, repairs, and upgrades.</p></div>
+    </div>
+    <div class="hscroll-nav">
+      <button type="button" data-hprev aria-label="Previous lifecycle stages">←</button>
+      <button type="button" data-hnext aria-label="Next lifecycle stages">→</button>
     </div>
   </div>
 </section>
@@ -127,23 +160,23 @@
       <span class="chip">Lifecycle Configuration</span>
     </div>
     <div class="rel-banner reveal" data-d="2">
-      <div><span class="rl blue">Launchbelt</span><b>Coordinates the digital work.</b><p>The controlled thread from requirement to evidence. <a class="accent" href="launchbelt.html">Explore Launchbelt →</a></p></div>
-      <div><span class="rl gold">Forge</span><b>Executes the physical work.</b><p>Distributed industrial execution under one standard. <a class="gold" href="forge.html">Explore Forge →</a></p></div>
+      <div><span class="rl blue">Launchbelt</span><b>Coordinates digital execution.</b><p>The controlled thread from requirement to evidence. <a class="accent" href="launchbelt.html">Explore Launchbelt →</a></p></div>
+      <div><span class="rl gold">Forge</span><b>Coordinates physical industrial execution.</b><p>Distributed industrial execution under one standard. <a class="gold" href="forge.html">Explore Forge →</a></p></div>
     </div>
   </div>
 </section>
 
 <!-- ========================= CTA ========================= -->
 <section class="cta rule-top" id="engage">
-  <img class="cta-bg" src="assets/norse/aurora-forge.webp" alt="" width="1600" height="670" loading="lazy" decoding="async">
-  <canvas id="cta-net"></canvas>
+  <img class="cta-bg" src="assets/norse/aurora-forge.webp" alt="" width="1600" height="670" loading="lazy" decoding="async" data-plx="0.06">
   <div class="wrap">
     <span class="eyebrow reveal">/ Engage</span>
     <h2 class="display h-xl reveal" data-d="1">Bring us the hard part.</h2>
     <div class="cta-actions reveal" data-d="2">
-      <a class="btn btn--primary" href="mailto:contact@asgardaerospace.com?subject=Program%20Inquiry">Discuss a Program <span class="arr">→</span></a>
+      <a class="btn btn--primary" href="mailto:contact@asgardaerospace.com?subject=Program%20Inquiry">Start a Program <span class="arr">→</span></a>
       <a class="btn" href="systems.html">Explore Our Systems <span class="arr">→</span></a>
     </div>
+    <p class="cta-motto reveal" data-d="3">Forging Brilliance, Destined by Design.</p>
   </div>
 </section>
 </main>
@@ -156,19 +189,20 @@
         <span class="wm">ASGARD<small>INDUSTRIES</small></span>
       </a>
       <p class="foot-tag">Asgard Industries develops and executes complex physical systems for autonomous and advanced missions.</p>
-      <p class="kicker" style="margin-top:16px">Forging Brilliance · Destined by Design</p>
+      <p class="kicker" style="margin-top:16px">Forging Brilliance, Destined by Design.</p>
       <a class="foot-mail" href="mailto:contact@asgardaerospace.com">contact@asgardaerospace.com</a>
     </div>
-    <div><h3>Company</h3><ul><li><a href="systems.html">Systems</a></li><li><a href="capabilities.html">Capabilities</a></li><li><a href="domains.html">Domains</a></li><li><a href="company.html">Company</a></li><li><a href="mailto:contact@asgardaerospace.com">Contact</a></li></ul></div>
-    <div><h3>Platform</h3><ul><li><a href="launchbelt.html">Launchbelt</a></li><li><a href="forge.html">Forge</a></li><li><a href="company.html#model">Operating Model</a></li><li><a href="capabilities.html#lifecycle">Lifecycle</a></li></ul></div>
-    <div><h3>Engage</h3><ul><li><a href="mailto:contact@asgardaerospace.com?subject=Program%20Inquiry">Discuss a Program</a></li><li><a href="build.html">Build Hardware</a></li><li><a href="partner.html">Join the Forge Network</a></li></ul></div>
+    <div><h3>Company</h3><ul><li><a href="company.html">Company</a></li><li><a href="domains.html">Sectors</a></li><li><a href="capabilities.html">Capabilities</a></li><li><a href="mailto:contact@asgardaerospace.com">Contact</a></li></ul></div>
+    <div><h3>Platform</h3><ul><li><a href="systems.html">Autonomous Infrastructure</a></li><li><a href="launchbelt.html">Launchbelt</a></li><li><a href="forge.html">Forge</a></li><li><a href="company.html#model">Operating Model</a></li></ul></div>
+    <div><h3>Engage</h3><ul><li><a href="mailto:contact@asgardaerospace.com?subject=Program%20Inquiry">Start a Program</a></li><li><a href="build.html">Build Hardware</a></li><li><a href="partner.html">Join the Forge Network</a></li></ul></div>
   </div>
+  <span class="foot-wm" aria-hidden="true">ASGARD</span>
   <div class="foot-bottom">
     <span>© 2026 Asgard Industries · Advanced Systems &amp; Autonomous Infrastructure</span>
     <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
   </div>
 </footer>
 
-<script src="asgard.js?v=20260825f"></script>
+<script src="asgard.js?v=20260831"></script>
 </body>
 </html>

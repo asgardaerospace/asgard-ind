@@ -12,3 +12,6 @@ node_modules/
 assets/**/*-raw.png
 
 .vercel
+
+# Davies reference template (licensed theme files - do not publish)
+template/
