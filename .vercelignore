@@ -1,3 +1,10 @@
-assets/**/*-raw.png
+# Generation sources and unreferenced masters — never deployed.
 Images/
+assets/_gen/
+assets/**/*-raw.png
+assets/realms/*.png
+assets/asgard-symbol.png
+# Fabricated console screenshot: contains certification badges, spend and supplier
+# figures that are not Asgard facts. Never deploy.
+assets/launchbelt-ui.webp
 .claude/
