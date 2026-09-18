@@ -49,6 +49,15 @@
   const heroVideos = [];
   document.querySelectorAll('video[data-ambient]').forEach(v=>{
     v.setAttribute('aria-hidden','true');
+    /* WebKit removes the poster when play() is called on a source that fails to load,
+       leaving a black box. Paint the same poster as the element background so a
+       failed video always degrades to the still. */
+    if(v.poster){
+      v.style.backgroundImage = 'url("' + v.poster + '")';
+      v.style.backgroundSize = 'cover';
+      v.style.backgroundRepeat = 'no-repeat';
+      v.style.backgroundPosition = getComputedStyle(v).objectPosition || '50% 50%';
+    }
     v.dataset.wanted = motionOK ? '1' : '0';
     if(!motionOK) v.pause();
     /* play-once clips hold their final frame instead of looping */
