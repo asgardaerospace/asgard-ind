@@ -8,3 +8,26 @@ assets/asgard-symbol.png
 # figures that are not Asgard facts. Never deploy.
 assets/launchbelt-ui.webp
 .claude/
+
+# Asset documentation (prompts, QC log); not part of the site
+ASSET-MANIFEST.md
+# Superseded imagery (replaced 2026-09-18; kept in the repo for reference, not deployed)
+assets/realms/*.webp
+assets/concepts/hero-b.webp
+assets/systems/hero-ops.webp
+assets/systems/mission-support.webp
+# Superseded 2026-09-18 (production-readiness pass): legacy heroes and family images.
+# Kept in git history for reference; never deployed.
+assets/hero-home.mp4
+assets/hero-home.webp
+assets/hero-build.mp4
+assets/hero-build.webp
+assets/hero-domains.mp4
+assets/concepts/
+assets/systems/
+# Non-site files that must never be published
+template/
+LEGACY-URL-MAP.md
+.vercel/
+.gitignore
+.vercelignore
