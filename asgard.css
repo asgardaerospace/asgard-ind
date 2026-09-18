@@ -219,14 +219,14 @@ h1,h2,h3,h4,.display{text-wrap:balance}
 .brand img{width:32px;height:32px}
 .brand .wm{font-weight:700;font-stretch:110%;letter-spacing:.18em;font-size:1rem;color:var(--t-hi);text-transform:uppercase}
 .brand .wm small{display:block;font-family:var(--mono);font-weight:400;font-size:.52rem;letter-spacing:.44em;color:var(--t-lo);margin-top:2px}
-.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links{display:flex;gap:clamp(18px,1.7vw,30px);align-items:center}
 .nav-links a{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t-mid);transition:color .25s;position:relative;display:inline-flex;gap:.6em}
 .nav-links a .n{color:var(--t-lo);font-size:.62rem;transform:translateY(-2px)}
 .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--t-hi)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--gold);transition:width .3s var(--ease)}
 .nav-links a:hover::after,.nav-links a[aria-current="page"]::after{width:100%}
 .nav-cta{display:flex;align-items:center;gap:18px}
-@media(max-width:1240px){.nav-links{display:none}}
+@media(max-width:1300px){.nav-links{display:none}}
 @media(max-width:640px){.nav-cta .btn--ghost{display:none}}
 
 /* menu button — mechanical */
@@ -347,6 +347,7 @@ body.menu-open .menu-item-stagger:nth-child(8){transition-delay:.66s}
              linear-gradient(180deg,var(--bg),transparent 22%)}
 .bleed .wrap{z-index:2;width:100%}
 .bleed-tag{position:absolute;z-index:2;bottom:22px;right:var(--gut);font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:color-mix(in oklab,var(--t-hi) 45%,transparent)}
+@media(max-width:640px){.hero .bleed-tag{right:auto;left:var(--gut);max-width:calc(100% - var(--gut) - 72px);font-size:.6rem;letter-spacing:.14em}}
 
 /* technical annotation points over imagery */
 .anno{position:absolute;z-index:2;display:none}
@@ -425,7 +426,10 @@ body.menu-open .menu-item-stagger:nth-child(8){transition-delay:.66s}
 .exec-copy h3{margin-top:14px}
 .exec-copy .lede{margin-top:18px;font-size:1.02rem}
 .exec-media{position:relative}
-.exec-media img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.exec-media img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.exec-media img.ui-shot{object-position:0 0;border:1px solid var(--ink-line)}
+.exec-media--ui::after{display:none}
+.exec-media--ui .ed-tag{position:static;display:block;margin-top:12px;color:var(--t-lo)}
 .exec-media .ed-tag{position:absolute;left:14px;bottom:10px;font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:color-mix(in oklab,var(--t-hi) 65%,transparent)}
 .exec-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(6,7,8,.5));pointer-events:none}
 .exec-terms{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;margin:22px 0 0;padding:0}
@@ -457,7 +461,10 @@ body.menu-open .menu-item-stagger:nth-child(8){transition-delay:.66s}
 .cap-row{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:64vh;border-top:1px solid var(--ink-line)}
 .cap-row:last-of-type{border-bottom:1px solid var(--ink-line)}
 .cap-row .cap-media{position:relative;overflow:hidden}
-.cap-row .cap-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cap-row .cap-media img,.cap-row .cap-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cap-media .ed-tag{position:absolute;left:14px;bottom:10px;z-index:2;font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:color-mix(in oklab,var(--t-hi) 70%,transparent);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+/* inline media toggles sit top-right, clear of captions */
+.cap-media .media-toggle,.mod-media .media-toggle,.fam-media .media-toggle{left:auto;right:12px;bottom:auto;top:12px;width:36px;height:36px}
 .cap-row.flip .cap-media{order:2}
 .cap-row .cap-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,5vw,90px) var(--gut)}
 @media(max-width:880px){
@@ -528,6 +535,9 @@ body.menu-open .menu-item-stagger:nth-child(8){transition-delay:.66s}
 .feature-list b{display:block;color:var(--t-hi);font-weight:600;font-size:1rem}
 .feature-list span{font-size:.88rem;color:var(--t-mid)}
 
+/* real Launchbelt product screenshots framed as a window */
+.lb-shot{margin:0}
+.lb-shot img{display:block;width:100%;height:auto}
 .mock-note{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t-lo);margin:12px 0 0;text-align:right}
 
 /* software window mock */
