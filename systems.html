@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#060708">
 <title>Autonomous Infrastructure | UAV, USV &amp; UGV Support Systems | Asgard Industries</title>
-<meta name="description" content="Autonomous infrastructure is the ground and maritime equipment uncrewed systems depend on: robotic hangars, docking and recovery, charging, payload exchange, inspection, and mission support. Six system families under development at Asgard Industries.">
+<meta name="description" content="Autonomous infrastructure is the ground and maritime equipment uncrewed systems depend on: robotic hangars, docking and recovery, charging, payload exchange, inspection, and mission support. Eleven product families under development at Asgard Industries.">
 <link rel="canonical" href="https://asgard-ind.com/systems">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Asgard Industries">
 <meta property="og:title" content="Autonomous Infrastructure | UAV, USV &amp; UGV Support Systems">
-<meta property="og:description" content="Six families of autonomous infrastructure under development: hangars, support stations, launch and recovery, and mission support.">
+<meta property="og:description" content="Eleven families of autonomous infrastructure under development: hangars, docks, support stations, charging, payload and tool exchange, maintenance, launch and recovery, and mission command.">
 <meta property="og:url" content="https://asgard-ind.com/systems">
 <meta property="og:image" content="https://asgard-ind.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,10 +19,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/systems/hero-ops.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/video/infra-uav-recovery-poster.webp" fetchpriority="high">
 <script>document.documentElement.className+=" js";</script>
-<link rel="stylesheet" href="asgard.css?v=20260831">
+<link rel="stylesheet" href="asgard.css?v=20260918b">
 <style>
+/* hero: keep the hangar and landing pad in frame on narrow screens */
+#top .hero-media{object-position:70% 50%}
+
 /* families — numbered image-led rows */
 .fam{border-top:1px solid var(--ink-line)}
 .fam:last-of-type{border-bottom:1px solid var(--ink-line)}
@@ -34,10 +37,19 @@
   .fam:nth-child(even) .fam-media{order:0}
 }
 .fam-media{position:relative}
-.fam-media img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.fam-media img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .fam-media .ed-tag{position:absolute;left:14px;bottom:10px;font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:color-mix(in oklab,var(--t-hi) 65%,transparent)}
 .fam-copy .fnum{font-family:var(--mono);font-size:.74rem;letter-spacing:.24em;color:var(--gold-hi)}
-.fam-copy h2{margin-top:14px}
+.fam-copy h2,.fam-copy h3{margin-top:14px}
+
+/* modules — two-column image-led family entries (06-11) */
+.mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(40px,5vw,72px) clamp(24px,3vw,48px);margin-top:clamp(64px,8vw,120px);padding-top:clamp(36px,4vw,56px);border-top:1px solid var(--ink-line)}
+@media(max-width:760px){.mods{grid-template-columns:1fr}}
+.mod-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg-1);margin-bottom:22px}
+.mod-media img,.mod-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mod .fnum{font-family:var(--mono);font-size:.72rem;letter-spacing:.24em;color:var(--gold-hi)}
+.mod h3{font-size:clamp(1.3rem,2.2vw,1.9rem);margin-top:10px}
+.mod p{margin:12px 0 0;color:var(--t-mid);max-width:48ch;line-height:1.6;font-size:.95rem}
 .fam-copy p{margin:16px 0 0;color:var(--t-mid);max-width:46ch;line-height:1.6;font-size:.98rem}
 
 /* the gap — manual vs autonomous ledger */
@@ -136,7 +148,7 @@
       "@id": "https://asgard-ind.com/systems#webpage",
       "url": "https://asgard-ind.com/systems",
       "name": "Autonomous Infrastructure | UAV, USV & UGV Support Systems | Asgard Industries",
-      "description": "Autonomous infrastructure is the ground and maritime equipment uncrewed systems depend on: robotic hangars, docking and recovery, charging, payload exchange, inspection, and mission support. Six system families under development at Asgard Industries.",
+      "description": "Autonomous infrastructure is the ground and maritime equipment uncrewed systems depend on: robotic hangars, docking and recovery, charging, payload exchange, inspection, and mission support. Eleven product families under development at Asgard Industries.",
       "inLanguage": "en-US",
       "isPartOf": {
         "@id": "https://asgard-ind.com/#website"
@@ -171,6 +183,7 @@
       <a href="/launchbelt"><span class="n">04</span>Launchbelt</a>
       <a href="/forge"><span class="n">05</span>Forge</a>
       <a href="/capabilities"><span class="n">06</span>Capabilities</a>
+      <a href="/bifrost"><span class="n">07</span>Bifrost</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn--ghost" href="/contact">Start a Program <span class="arr">→</span></a>
@@ -191,7 +204,8 @@
         <li class="menu-item-stagger"><a href="/launchbelt"><span class="mn">04 /</span><span class="mt">Launchbelt</span></a></li>
         <li class="menu-item-stagger"><a href="/forge"><span class="mn">05 /</span><span class="mt">Forge</span></a></li>
         <li class="menu-item-stagger"><a href="/capabilities"><span class="mn">06 /</span><span class="mt">Capabilities</span></a></li>
-        <li class="menu-item-stagger"><a href="/contact"><span class="mn">07 /</span><span class="mt">Contact</span></a></li>
+        <li class="menu-item-stagger"><a href="/bifrost"><span class="mn">07 /</span><span class="mt">Bifrost</span></a></li>
+        <li class="menu-item-stagger"><a href="/contact"><span class="mn">08 /</span><span class="mt">Contact</span></a></li>
       </ul>
     </nav>
     <div class="menu-aside">
@@ -206,7 +220,10 @@
 
 <!-- ========================= HERO ========================= -->
 <section class="hero" id="top">
-  <img class="hero-media" src="assets/systems/hero-ops.webp" alt="" width="2400" height="1018" fetchpriority="high" aria-hidden="true">
+  <video class="hero-media" data-ambient data-autoplay data-once muted playsinline preload="none" poster="assets/video/infra-uav-recovery-poster.webp" width="1600" height="686">
+    <source src="assets/video/infra-uav-recovery-960.mp4" type="video/mp4" media="(max-width:760px)">
+    <source src="assets/video/infra-uav-recovery-1600.mp4" type="video/mp4">
+  </video>
   <div class="hero-frame" aria-hidden="true">
     <span class="hf tr">Recovery · Power · Payload · Readiness</span>
   </div>
@@ -220,6 +237,7 @@
     </div>
   </div>
   <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
+  <span class="bleed-tag">UAV Recovery · Illustrative Configuration</span>
 </section>
 
 <!-- ========================= 01 · THE GAP ========================= -->
@@ -254,25 +272,92 @@
   </div>
 </section>
 
-<!-- ========================= 02 · SYSTEM FAMILIES ========================= -->
+<!-- ========================= 02 · INFRASTRUCTURE ENVIRONMENTS ========================= -->
+<section class="section--tight section rule-top" id="environments" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="section-head" style="padding-bottom:clamp(48px,5vw,80px)">
+      <span class="eyebrow eyebrow--gold reveal">/ Infrastructure Categories</span>
+      <h2 class="display h-lg reveal" data-d="1">Five operating environments. One architecture.</h2>
+      <p class="lede reveal" data-d="2">Autonomous infrastructure is the physical and digital operating environment that lets vehicles and distributed assets work with reduced local human intervention: storing, protecting, launching, recovering, powering, servicing, and coordinating them.</p>
+    </div>
+  </div>
+
+  <div class="cap-row" id="env-air">
+    <div class="cap-media mreveal"><img src="assets/infrastructure/infra-air-hangar-hexacopter-1600.webp" srcset="assets/infrastructure/infra-air-hangar-hexacopter-960.webp 960w, assets/infrastructure/infra-air-hangar-hexacopter-1600.webp 1600w" sizes="(max-width:880px) 100vw, 50vw" alt="Modular robotic UAV hangar at a remote lakeside site with its clamshell roof open, a hexacopter held by centering pushers on the landing plate, a rail-mounted servicing arm, battery and payload racks, a weather mast, and an electrical cabinet" width="1600" height="905" loading="lazy" decoding="async"><span class="ed-tag">Illustrative Configuration</span></div>
+    <div class="cap-copy">
+      <span class="idx reveal">/ 01 · Air Infrastructure</span>
+      <h3 class="display h-md reveal" data-d="1" style="margin-top:14px">Recover, protect, recharge, relaunch.</h3>
+      <p class="lede reveal" data-d="2">Robotic hangars and landing platforms where an aircraft lands, is centered, charged or given a fresh battery, has its payload exchanged, and is protected from weather until its next sortie.</p>
+      <ul class="exec-terms reveal" data-d="3"><li>Robotic UAV Hangars</li><li>Landing Platforms</li><li>Battery Exchange</li><li>Payload Exchange</li><li>Remote Operating Stations</li></ul>
+    </div>
+  </div>
+
+  <div class="cap-row flip" id="env-maritime">
+    <div class="cap-media mreveal">
+      <video data-ambient data-inview data-once muted playsinline preload="none" poster="assets/video/infra-usv-capture-poster.webp" width="1280" height="720">
+        <source src="assets/video/infra-usv-capture-800.mp4" type="video/mp4" media="(max-width:880px)">
+        <source src="assets/video/infra-usv-capture-1280.mp4" type="video/mp4">
+      </video>
+      <span class="ed-tag">Illustrative Configuration · USV capture</span>
+    </div>
+    <div class="cap-copy">
+      <span class="idx reveal">/ 02 · Maritime Infrastructure</span>
+      <h3 class="display h-md reveal" data-d="1" style="margin-top:14px">Docking and capture, built for salt water.</h3>
+      <p class="lede reveal" data-d="2">Robotic USV hangars and pier-integrated docks with mechanical capture, shore power, payload handling, and corrosion-resistant structure, so a vessel can arrive, be secured, and be serviced without a crew on the pier.</p>
+      <ul class="exec-terms reveal" data-d="3"><li>Robotic USV Hangars</li><li>Docking Stations</li><li>Recovery Systems</li><li>Charging + Fueling</li><li>Payload Handling</li></ul>
+    </div>
+  </div>
+
+  <div class="cap-row" id="env-land">
+    <div class="cap-media mreveal"><img src="assets/infrastructure/infra-land-ugv-garage-1600.webp" srcset="assets/infrastructure/infra-land-ugv-garage-960.webp 960w, assets/infrastructure/infra-land-ugv-garage-1600.webp 1600w" sizes="(max-width:880px) 100vw, 50vw" alt="Six-wheeled uncrewed ground vehicle parked on alignment rails in a robotic garage, with an overhead automated charging connector engaged and a robotic manipulator beside a battery exchange rack" width="1600" height="905" loading="lazy" decoding="async"><span class="ed-tag">Illustrative Configuration</span></div>
+    <div class="cap-copy">
+      <span class="idx reveal">/ 03 · Land Infrastructure</span>
+      <h3 class="display h-md reveal" data-d="1" style="margin-top:14px">Garages and shelters for ground robots.</h3>
+      <p class="lede reveal" data-d="2">UGV garages and robotic shelters where a ground vehicle aligns, connects to automated charging, exchanges batteries, tools, or payloads, and is inspected before it returns to work.</p>
+      <ul class="exec-terms reveal" data-d="3"><li>UGV Garages</li><li>Robotic Shelters</li><li>Charging + Refueling</li><li>Tool Exchange</li><li>Maintenance Cells</li></ul>
+    </div>
+  </div>
+
+  <div class="cap-row flip" id="env-space">
+    <div class="cap-media mreveal"><img src="assets/infrastructure/infra-space-payload-processing-1600.webp" srcset="assets/infrastructure/infra-space-payload-processing-960.webp 960w, assets/infrastructure/infra-space-payload-processing-1600.webp 1600w" sizes="(max-width:880px) 100vw, 50vw" alt="High-bay payload processing facility with a small satellite on a precision rotation fixture under an overhead crane, softwall clean enclosure, test support rack, and open transport container, with two technicians in cleanroom garments" width="1600" height="905" loading="lazy" decoding="async"><span class="ed-tag">Illustrative Configuration</span></div>
+    <div class="cap-copy">
+      <span class="idx reveal">/ 04 · Space-Support Infrastructure</span>
+      <h3 class="display h-md reveal" data-d="1" style="margin-top:14px">Ground systems that handle flight hardware.</h3>
+      <p class="lede reveal" data-d="2">Payload processing, robotic handling, integration fixtures, clean enclosures, transportation, and test support: the ground infrastructure that moves spacecraft hardware safely from integration to the launch site.</p>
+      <ul class="exec-terms reveal" data-d="3"><li>Payload Processing</li><li>Robotic Handling</li><li>Integration Fixtures</li><li>Clean Enclosures</li><li>Ground Support Equipment</li></ul>
+    </div>
+  </div>
+
+  <div class="cap-row" id="env-distributed">
+    <div class="cap-media mreveal"><img src="assets/infrastructure/infra-distributed-mission-node-1600.webp" srcset="assets/infrastructure/infra-distributed-mission-node-960.webp 960w, assets/infrastructure/infra-distributed-mission-node-1600.webp 1600w" sizes="(max-width:880px) 100vw, 50vw" alt="Expeditionary mission-support node on open grassland with equipment shelters, a communications mast and satellite terminal, trailer-mounted energy storage with solar array, a compact UAV hangar, a UGV on a charging pad, and a sensor tower" width="1600" height="905" loading="lazy" decoding="async"><span class="ed-tag">Illustrative Configuration</span></div>
+    <div class="cap-copy">
+      <span class="idx reveal">/ 05 · Distributed Mission Infrastructure</span>
+      <h3 class="display h-md reveal" data-d="1" style="margin-top:14px">Operating capacity, wherever the mission is.</h3>
+      <p class="lede reveal" data-d="2">Networked, field-deployable nodes combining communications relays, energy systems, remote sensing, fleet support, and remote operations, so distributed assets stay supported far from a fixed base.</p>
+      <ul class="exec-terms reveal" data-d="3"><li>Fleet Support Nodes</li><li>Communications Relays</li><li>Energy Systems</li><li>Remote Sensor Stations</li><li>Mobile Command</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 03 · SYSTEM FAMILIES ========================= -->
 <section class="section section--alt rule-top" id="families">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow reveal">/ System Families</span>
+      <span class="eyebrow reveal">/ Product Families</span>
       <h2 class="display h-lg reveal" data-d="1">What Asgard is building.</h2>
-      <p class="lede reveal" data-d="2">Six families of autonomous infrastructure, developed on one architecture and executed through one industrial model. These are design concepts in development; none is presented as a fielded product.</p>
+      <p class="lede reveal" data-d="2">Eleven families of autonomous infrastructure, developed on one common system architecture and executed through one industrial model. These are design concepts in development; none is presented as a fielded product.</p>
     </div>
 
     <div style="margin-top:clamp(48px,6vw,84px)">
       <article class="fam">
         <div class="fam-grid">
           <div class="fam-media mreveal">
-            <img src="assets/systems/uav-hangar.webp" alt="Robotic UAV hangar with charging cradle and servicing arm" width="2000" height="1116" loading="lazy" decoding="async">
+            <img src="assets/infrastructure/fam-uav-hangar-battery-exchange-1600.webp" srcset="assets/infrastructure/fam-uav-hangar-battery-exchange-960.webp 960w, assets/infrastructure/fam-uav-hangar-battery-exchange-1600.webp 1600w" sizes="(max-width:880px) 100vw, 58vw" alt="Inside a UAV hangar module: a rail-mounted robotic arm withdraws the battery cassette from a hexacopter held on its landing plate, beside a slotted battery storage rack" width="1600" height="905" loading="lazy" decoding="async">
             <span class="ed-tag">Illustrative Configuration</span>
           </div>
           <div class="fam-copy reveal">
             <span class="fnum">01 / Product Family</span>
-            <h2 class="display h-md">UAV Hangar Platform</h2>
+            <h3 class="display h-md">UAV Hangar Platform</h3>
             <p>Robotic infrastructure for aircraft protection, recovery, charging, payload handling, inspection, data transfer, and mission turnaround.</p>
           </div>
         </div>
@@ -280,12 +365,12 @@
       <article class="fam">
         <div class="fam-grid">
           <div class="fam-media mreveal">
-            <img src="assets/systems/usv-hangar.webp" alt="Autonomous maritime support station with vessel docking" width="2000" height="1122" loading="lazy" decoding="async">
+            <img src="assets/infrastructure/fam-usv-hangar-lift-1600.webp" srcset="assets/infrastructure/fam-usv-hangar-lift-960.webp 960w, assets/infrastructure/fam-usv-hangar-lift-1600.webp 1600w" sizes="(max-width:880px) 100vw, 58vw" alt="Enclosed USV hangar over the water with its door raised and a vessel resting on a submerged lift cradle beneath an overhead handling gantry and shore-power reel" width="1600" height="905" loading="lazy" decoding="async">
             <span class="ed-tag">Illustrative Configuration</span>
           </div>
           <div class="fam-copy reveal">
             <span class="fnum">02 / Product Family</span>
-            <h2 class="display h-md">USV Hangar Platform</h2>
+            <h3 class="display h-md">USV Hangar Platform</h3>
             <p>Autonomous maritime infrastructure for docking, protection, charging or fueling, payload operations, inspection, maintenance support, and redeployment.</p>
           </div>
         </div>
@@ -293,12 +378,12 @@
       <article class="fam">
         <div class="fam-grid">
           <div class="fam-media mreveal">
-            <img src="assets/systems/ugv-station.webp" alt="Robotic ground vehicle support station service bay" width="2000" height="1116" loading="lazy" decoding="async">
+            <img src="assets/infrastructure/fam-ugv-support-station-1600.webp" srcset="assets/infrastructure/fam-ugv-support-station-960.webp 960w, assets/infrastructure/fam-ugv-support-station-1600.webp 1600w" sizes="(max-width:880px) 100vw, 58vw" alt="Tracked uncrewed ground vehicle chocked on a service deck while a gray industrial manipulator inside a marked safety zone lifts a battery module from its side bay" width="1600" height="905" loading="lazy" decoding="async">
             <span class="ed-tag">Illustrative Configuration</span>
           </div>
           <div class="fam-copy reveal">
             <span class="fnum">03 / Product Family</span>
-            <h2 class="display h-md">UGV Support Station</h2>
+            <h3 class="display h-md">UGV Support Station</h3>
             <p>Infrastructure for robotic ground systems including charging, battery exchange, tool exchange, payload exchange, inspection, maintenance, and fleet support.</p>
           </div>
         </div>
@@ -306,12 +391,12 @@
       <article class="fam">
         <div class="fam-grid">
           <div class="fam-media mreveal">
-            <img src="assets/systems/support-node.webp" alt="Containerized mobile autonomous support node with landing pad" width="2000" height="1116" loading="lazy" decoding="async">
+            <img src="assets/infrastructure/fam-mobile-support-node-1600.webp" srcset="assets/infrastructure/fam-mobile-support-node-960.webp 960w, assets/infrastructure/fam-mobile-support-node-1600.webp 1600w" sizes="(max-width:880px) 100vw, 58vw" alt="Containerized mobile support node at dusk with its roof hatch open as a hexacopter lands, a telescoping antenna mast, an open equipment door, solar panels, and a generator module" width="1600" height="905" loading="lazy" decoding="async">
             <span class="ed-tag">Illustrative Configuration</span>
           </div>
           <div class="fam-copy reveal">
             <span class="fnum">04 / Product Family</span>
-            <h2 class="display h-md">Mobile Autonomous Support Node</h2>
+            <h3 class="display h-md">Mobile Autonomous Support Node</h3>
             <p>Deployable infrastructure supporting autonomous assets in expeditionary, remote, or distributed operating environments.</p>
           </div>
         </div>
@@ -319,35 +404,64 @@
       <article class="fam">
         <div class="fam-grid">
           <div class="fam-media mreveal">
-            <img src="assets/systems/launch-recovery.webp" alt="Rail launch and recovery system for fixed-wing UAV" width="2000" height="1254" loading="lazy" decoding="async">
+            <img src="assets/infrastructure/fam-launch-recovery-range-1600.webp" srcset="assets/infrastructure/fam-launch-recovery-range-960.webp 960w, assets/infrastructure/fam-launch-recovery-range-1600.webp 1600w" sizes="(max-width:880px) 100vw, 58vw" alt="Aerial view of a launch and recovery range: a trailer-mounted rail launcher aimed down a marked launch corridor, and a separate guyed two-mast recovery net about 150 m away with its own marked approach lane at right angles to the launch direction" width="1600" height="905" loading="lazy" decoding="async">
             <span class="ed-tag">Illustrative Configuration</span>
           </div>
           <div class="fam-copy reveal">
             <span class="fnum">05 / Product Family</span>
-            <h2 class="display h-md">Launch &amp; Recovery Systems</h2>
+            <h3 class="display h-md">Launch and Recovery Platform</h3>
             <p>Integrated equipment for controlled vehicle deployment, positioning, capture, recovery, and servicing.</p>
           </div>
         </div>
       </article>
-      <article class="fam">
-        <div class="fam-grid">
-          <div class="fam-media mreveal">
-            <img src="assets/systems/mission-support.webp" alt="Robotic handling fixture and ground support equipment bay" width="2000" height="1116" loading="lazy" decoding="async">
-            <span class="ed-tag">Illustrative Configuration</span>
-          </div>
-          <div class="fam-copy reveal">
-            <span class="fnum">06 / Product Family</span>
-            <h2 class="display h-md">Mission Support Systems</h2>
-            <p>Ground support equipment, robotic handling, test systems, power systems, communications systems, and specialized mission infrastructure.</p>
-          </div>
+    </div>
+
+    <div class="mods">
+      <p class="kicker reveal" style="grid-column:1/-1">Modules + platforms · 06 to 11</p>
+      <article class="mod reveal">
+        <div class="mod-media"><img src="assets/infrastructure/fam-charging-skid-960.webp" srcset="assets/infrastructure/fam-charging-skid-960.webp 960w, assets/infrastructure/fam-charging-skid-1600.webp 1600w" sizes="(max-width:760px) 100vw, 46vw" alt="Galvanized charging skid with a hexacopter on a contact-charging pad and a six-wheeled UGV docked to an automated charging connector, fed by power cabinets and a solar array" width="960" height="717" loading="lazy" decoding="async"></div>
+        <span class="fnum">06 / Product Family</span>
+        <h3 class="display">Distributed Charging Platform</h3>
+        <p>Conductive or inductive charging with automated connector engagement, battery health and thermal monitoring, and charge scheduling for mixed fleets.</p>
+      </article>
+      <article class="mod reveal" data-d="1">
+        <div class="mod-media">
+          <img src="assets/infrastructure/fam-payload-exchange-960.webp" srcset="assets/infrastructure/fam-payload-exchange-960.webp 960w, assets/infrastructure/fam-payload-exchange-1600.webp 1600w" sizes="(max-width:760px) 100vw, 46vw" alt="Robotic arm holding a gimbal camera payload under a quadcopter's quick-release payload rail, beside a rack of alternate payload modules" width="960" height="717" loading="lazy" decoding="async">
         </div>
+        <span class="fnum">07 / Product Family</span>
+        <h3 class="display">Robotic Payload Exchange Platform</h3>
+        <p>Robotic removal and installation of sensor and mission payloads with mechanical locking, electrical and data connection, functional verification, and configuration control.</p>
+      </article>
+      <article class="mod reveal">
+        <div class="mod-media"><img src="assets/infrastructure/fam-tool-exchange-960.webp" srcset="assets/infrastructure/fam-tool-exchange-960.webp 960w, assets/infrastructure/fam-tool-exchange-1600.webp 1600w" sizes="(max-width:760px) 100vw, 46vw" alt="Tracked UGV with a manipulator arm docking its wrist tool-changer into a rack of holstered end effectors: gripper, cutting tool, inspection probe, and vacuum gripper" width="960" height="717" loading="lazy" decoding="async"></div>
+        <span class="fnum">08 / Product Family</span>
+        <h3 class="display">Robotic Tool Exchange Platform</h3>
+        <p>Tool identification, storage, and positioning for robotic pickup and release, with utility connection, tool verification, and calibration status tracking.</p>
+      </article>
+      <article class="mod reveal" data-d="1">
+        <div class="mod-media"><img src="assets/infrastructure/fam-maintenance-cell-960.webp" srcset="assets/infrastructure/fam-maintenance-cell-960.webp 960w, assets/infrastructure/fam-maintenance-cell-1600.webp 1600w" sizes="(max-width:760px) 100vw, 46vw" alt="Enclosed maintenance cell with an uncrewed aircraft fuselage on an adjustable cradle, a gantry-mounted inspection probe over the skin, wings on a padded rack, and a propeller on a balancing stand" width="960" height="717" loading="lazy" decoding="async"></div>
+        <span class="fnum">09 / Product Family</span>
+        <h3 class="display">Autonomous Maintenance Cell</h3>
+        <p>Inspection, diagnostics, cleaning, module and sensor replacement, and minor repair, with each maintenance action traceable to the asset it was performed on.</p>
+      </article>
+      <article class="mod reveal">
+        <div class="mod-media"><img src="assets/infrastructure/fam-command-shelter-960.webp" srcset="assets/infrastructure/fam-command-shelter-960.webp 960w, assets/infrastructure/fam-command-shelter-1600.webp 1600w" sizes="(max-width:760px) 100vw, 46vw" alt="Interior of a ruggedized mission command shelter with two remote-operator workstations, an operator wearing a headset, and an equipment rack of network hardware" width="960" height="717" loading="lazy" decoding="async"></div>
+        <span class="fnum">10 / Product Family</span>
+        <h3 class="display">Mission Command Shelter</h3>
+        <p>Ruggedized shelters for remote operators to supervise fleets, monitor readiness, and coordinate distributed autonomous assets from the field.</p>
+      </article>
+      <article class="mod reveal" data-d="1">
+        <div class="mod-media"><img src="assets/infrastructure/fam-expeditionary-platform-960.webp" srcset="assets/infrastructure/fam-expeditionary-platform-960.webp 960w, assets/infrastructure/fam-expeditionary-platform-1600.webp 1600w" sizes="(max-width:760px) 100vw, 46vw" alt="Trailer-mounted expeditionary platform deploying at dawn: a folding shelter opening into a deck, leveling jacks on footpads, and a telescoping communications mast rising" width="960" height="896" loading="lazy" decoding="async"></div>
+        <span class="fnum">11 / Product Family</span>
+        <h3 class="display">Expeditionary Infrastructure Platform</h3>
+        <p>Trailer-mounted and containerized infrastructure that deploys, levels, powers up, and establishes communications at a new site, then packs down to move.</p>
       </article>
     </div>
     <p class="mock-note reveal" style="text-align:left;margin-top:24px">System imagery shows illustrative design concepts · systems are in development, not fielded</p>
   </div>
 </section>
 
-<!-- ========================= 03 · OPERATIONAL CYCLE ========================= -->
+<!-- ========================= 04 · OPERATIONAL CYCLE ========================= -->
 <section class="section rule-top" id="cycle">
   <div class="wrap">
     <div class="section-head">
@@ -368,7 +482,7 @@
 
 <!-- ========================= CTA ========================= -->
 <section class="cta rule-top" id="engage">
-  <img class="cta-bg" src="assets/norse/aurora-forge.webp" alt="" width="2400" height="1018" loading="lazy" decoding="async" data-plx="0.06">
+  <img class="cta-bg" src="assets/norse/aurora-forge.webp" srcset="assets/norse/aurora-forge-960.webp 960w, assets/norse/aurora-forge.webp 2400w" sizes="100vw" alt="" width="2400" height="1018" loading="lazy" decoding="async" data-plx="0.06">
   <div class="wrap">
     <span class="eyebrow reveal">/ Engage</span>
     <h2 class="display h-xl reveal" data-d="1">Operating autonomous assets?</h2>
@@ -393,7 +507,7 @@
       <a class="foot-mail" href="mailto:contact@asgardaerospace.com">contact@asgardaerospace.com</a>
     </div>
     <div><h3>Company</h3><ul><li><a href="/company">Company</a></li><li><a href="/domains">Sectors</a></li><li><a href="/capabilities">Capabilities</a></li><li><a href="/contact">Contact</a></li></ul></div>
-    <div><h3>Platform</h3><ul><li><a href="/systems">Autonomous Infrastructure</a></li><li><a href="/launchbelt">Launchbelt</a></li><li><a href="/forge">Forge</a></li><li><a href="/company#model">Operating Model</a></li></ul></div>
+    <div><h3>Platform</h3><ul><li><a href="/systems">Autonomous Infrastructure</a></li><li><a href="/launchbelt">Launchbelt</a></li><li><a href="/forge">Forge</a></li><li><a href="/bifrost">Bifrost</a></li><li><a href="/company#model">Operating Model</a></li></ul></div>
     <div><h3>Engage</h3><ul><li><a href="/contact">Start a Program</a></li><li><a href="/build">Build Hardware</a></li><li><a href="/partner">Join the Forge Network</a></li></ul></div>
   </div>
   <span class="foot-wm" aria-hidden="true">ASGARD</span>
@@ -403,6 +517,6 @@
   </div>
 </footer>
 
-<script src="asgard.js?v=20260831"></script>
+<script src="asgard.js?v=20260918c"></script>
 </body>
 </html>

@@ -19,12 +19,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/hero-home.webp" fetchpriority="high">
+<link rel="preload" as="image" media="(max-aspect-ratio: 4/5)" imagesrcset="assets/home/home-integration-hall-portrait-480.webp 480w, assets/home/home-integration-hall-portrait-645.webp 645w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" media="(min-aspect-ratio: 801/1000)" imagesrcset="assets/home/home-integration-hall-960.webp 960w, assets/home/home-integration-hall-1600.webp 1600w, assets/home/home-integration-hall-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
 <script>document.documentElement.className+=" js";</script>
-<link rel="stylesheet" href="asgard.css?v=20260831">
+<link rel="stylesheet" href="asgard.css?v=20260918b">
 <style>
 /* ---------- homepage-specific ---------- */
 .hero--home .hero-grid{grid-template-columns:1fr;align-items:end}
+.hero--home .hero-media{object-position:18% 50%;opacity:.78}
 .hero--home .hero-content{max-width:1100px}
 .hero--home .lede{max-width:46ch}
 
@@ -45,7 +47,7 @@
 .infra-band figure{margin:0;position:relative}
 .infra-band figure:last-child{margin-top:clamp(40px,6vw,96px)}
 @media(max-width:820px){.infra-band figure:last-child{margin-top:0}}
-.infra-band img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.infra-band img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
 .infra-band figcaption{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--t-lo);margin-top:12px}
 </style>
 <script type="application/ld+json">
@@ -148,6 +150,7 @@
       <a href="/launchbelt"><span class="n">04</span>Launchbelt</a>
       <a href="/forge"><span class="n">05</span>Forge</a>
       <a href="/capabilities"><span class="n">06</span>Capabilities</a>
+      <a href="/bifrost"><span class="n">07</span>Bifrost</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn--ghost" href="/contact">Start a Program <span class="arr">→</span></a>
@@ -169,7 +172,8 @@
         <li class="menu-item-stagger"><a href="/launchbelt"><span class="mn">04 /</span><span class="mt">Launchbelt</span></a></li>
         <li class="menu-item-stagger"><a href="/forge"><span class="mn">05 /</span><span class="mt">Forge</span></a></li>
         <li class="menu-item-stagger"><a href="/capabilities"><span class="mn">06 /</span><span class="mt">Capabilities</span></a></li>
-        <li class="menu-item-stagger"><a href="/contact"><span class="mn">07 /</span><span class="mt">Contact</span></a></li>
+        <li class="menu-item-stagger"><a href="/bifrost"><span class="mn">07 /</span><span class="mt">Bifrost</span></a></li>
+        <li class="menu-item-stagger"><a href="/contact"><span class="mn">08 /</span><span class="mt">Contact</span></a></li>
       </ul>
     </nav>
     <div class="menu-aside">
@@ -184,9 +188,10 @@
 
 <!-- ========================= 01 · IMMERSIVE HERO ========================= -->
 <section class="hero hero--home" id="top">
-  <video class="hero-media" data-ambient autoplay muted loop playsinline preload="metadata" poster="assets/hero-home.webp">
-    <source src="assets/hero-home.mp4" type="video/mp4">
-  </video>
+  <picture>
+    <source media="(max-aspect-ratio: 4/5)" srcset="assets/home/home-integration-hall-portrait-480.webp 480w, assets/home/home-integration-hall-portrait-645.webp 645w" sizes="100vw">
+    <img class="hero-media" src="assets/home/home-integration-hall-2400.webp" srcset="assets/home/home-integration-hall-960.webp 960w, assets/home/home-integration-hall-1600.webp 1600w, assets/home/home-integration-hall-2400.webp 2400w" sizes="100vw" alt="" width="2400" height="1029" fetchpriority="high" decoding="async" aria-hidden="true">
+  </picture>
   <div class="hero-frame" aria-hidden="true">
     <span class="hf tl">Asgard Industries</span>
     <span class="hf tr">Air · Maritime · Land · Robotics · Space</span>
@@ -233,11 +238,11 @@
 <section class="seq rule-top" id="sectors" data-seq aria-label="Operating sectors">
   <div class="seq-pin">
     <div class="seq-media" aria-hidden="true">
-      <img src="assets/concepts/hero-c.webp" alt="" loading="lazy" decoding="async">
-      <img src="assets/realms/sea-3.webp" alt="" loading="lazy" decoding="async">
-      <img src="assets/realms/land-3.webp" alt="" loading="lazy" decoding="async">
-      <img src="assets/realms/space-3.webp" alt="" loading="lazy" decoding="async">
-      <img src="assets/systems/hero-ops.webp" alt="" loading="lazy" decoding="async">
+      <img src="assets/sectors/air-uas-integration-1600.webp" srcset="assets/sectors/air-uas-integration-960.webp 960w, assets/sectors/air-uas-integration-1600.webp 1600w" sizes="100vw" alt="" loading="lazy" decoding="async">
+      <img src="assets/sectors/maritime-usv-underway-1600.webp" srcset="assets/sectors/maritime-usv-underway-960.webp 960w, assets/sectors/maritime-usv-underway-1600.webp 1600w" sizes="100vw" alt="" loading="lazy" decoding="async">
+      <img src="assets/sectors/land-ugv-field-r-1600.webp" srcset="assets/sectors/land-ugv-field-r-960.webp 960w, assets/sectors/land-ugv-field-r-1600.webp 1600w" sizes="100vw" alt="" loading="lazy" decoding="async">
+      <img src="assets/sectors/space-bus-structure-1600.webp" srcset="assets/sectors/space-bus-structure-960.webp 960w, assets/sectors/space-bus-structure-1600.webp 1600w" sizes="100vw" alt="" loading="lazy" decoding="async">
+      <img src="assets/infrastructure/infra-hero-site-2400.webp" srcset="assets/infrastructure/infra-hero-site-960.webp 960w, assets/infrastructure/infra-hero-site-1600.webp 1600w, assets/infrastructure/infra-hero-site-2400.webp 2400w" sizes="100vw" alt="" loading="lazy" decoding="async">
     </div>
     <div class="seq-scrim" aria-hidden="true"></div>
     <div class="seq-hud wrap">
@@ -246,7 +251,7 @@
       <div class="seq-panels">
 
         <div class="seq-panel is-active">
-          <figure class="seq-mimg"><img src="assets/concepts/hero-c.webp" alt="Uncrewed aircraft over open terrain" loading="lazy" decoding="async"></figure>
+          <figure class="seq-mimg"><img src="assets/sectors/air-uas-integration-960.webp" alt="Original fixed-wing uncrewed aircraft on an integration cradle with its avionics bay open beside a detached wing section" loading="lazy" decoding="async"></figure>
           <span class="eyebrow">/ Sector 01</span>
           <h2 class="display seq-title">Air</h2>
           <p>Airframes, uncrewed aircraft structures, and the ground infrastructure that recovers, services, and redeploys them.</p>
@@ -254,7 +259,7 @@
         </div>
 
         <div class="seq-panel">
-          <figure class="seq-mimg"><img src="assets/realms/sea-3.webp" alt="Autonomous surface vessel at sea" loading="lazy" decoding="async"></figure>
+          <figure class="seq-mimg"><img src="assets/sectors/maritime-usv-underway-960.webp" alt="Uncrewed surface vessel with a radar and camera mast underway on open coastal water" loading="lazy" decoding="async"></figure>
           <span class="eyebrow">/ Sector 02</span>
           <h2 class="display seq-title">Maritime</h2>
           <p>Structures and support systems for naval platforms and autonomous surface and subsurface vessels, built to marine and defense standards.</p>
@@ -262,7 +267,7 @@
         </div>
 
         <div class="seq-panel">
-          <figure class="seq-mimg"><img src="assets/realms/land-3.webp" alt="Ground vehicle platform in the field" loading="lazy" decoding="async"></figure>
+          <figure class="seq-mimg"><img src="assets/sectors/land-ugv-field-960.webp" alt="Six-wheeled uncrewed ground vehicle with lidar and cameras on a rocky forest trail" loading="lazy" decoding="async"></figure>
           <span class="eyebrow">/ Sector 03</span>
           <h2 class="display seq-title">Land + Robotics</h2>
           <p>Ground platforms, robotic systems, automated production cells, and the support stations that keep robotic fleets in operation.</p>
@@ -270,7 +275,7 @@
         </div>
 
         <div class="seq-panel">
-          <figure class="seq-mimg"><img src="assets/realms/space-3.webp" alt="Orbital hardware above Earth" loading="lazy" decoding="async"></figure>
+          <figure class="seq-mimg"><img src="assets/sectors/space-bus-structure-960.webp" alt="Machined aluminum isogrid satellite bus structure on an integration fixture in a cleanroom" loading="lazy" decoding="async"></figure>
           <span class="eyebrow">/ Sector 04</span>
           <h2 class="display seq-title">Space</h2>
           <p>Bus structures, precision mounts, and flight hardware for satellites and orbital infrastructure — with the tolerances and traceability space programs demand.</p>
@@ -278,7 +283,7 @@
         </div>
 
         <div class="seq-panel">
-          <figure class="seq-mimg"><img src="assets/systems/hero-ops.webp" alt="Autonomous operations infrastructure at dusk" loading="lazy" decoding="async"></figure>
+          <figure class="seq-mimg"><img src="assets/infrastructure/infra-hero-site-960.webp" alt="Remote autonomous operations site at dusk with a UAV descending to a landing pad beside a robotic hangar, comms mast, and solar array" loading="lazy" decoding="async"></figure>
           <span class="eyebrow">/ Sector 05</span>
           <h2 class="display seq-title">Autonomous Infrastructure</h2>
           <p>The operating environment autonomous vehicles depend on: recovery, protection, power, payload handling, inspection, and redeployment.</p>
@@ -292,7 +297,7 @@
 
 <!-- ========================= 04 · AUTONOMOUS INFRASTRUCTURE ========================= -->
 <section class="bleed rule-top" id="infrastructure">
-  <div class="bleed-media" aria-hidden="true"><img src="assets/systems/uav-hangar.webp" alt="" loading="lazy" decoding="async" data-plx="0.07"></div>
+  <div class="bleed-media" aria-hidden="true"><img src="assets/infrastructure/infra-air-hangar-hexacopter-1600.webp" srcset="assets/infrastructure/infra-air-hangar-hexacopter-960.webp 960w, assets/infrastructure/infra-air-hangar-hexacopter-1600.webp 1600w" sizes="100vw" alt="" loading="lazy" decoding="async" data-plx="0.07"></div>
   <div class="bleed-scrim" aria-hidden="true"></div>
   <div class="anno" style="left:58%;top:30%"><span class="dot"></span><span class="lbl">Robotic Recovery</span></div>
   <div class="anno" style="left:52%;top:57%"><span class="dot"></span><span class="lbl">Automated Charging</span></div>
@@ -325,12 +330,12 @@
   <div class="wrap">
     <div class="infra-band">
       <figure class="mreveal">
-        <img src="assets/systems/usv-hangar.webp" alt="Autonomous maritime support station with vessel docking" width="2000" height="1122" loading="lazy" decoding="async">
+        <img src="assets/infrastructure/fam-usv-hangar-lift-1600.webp" srcset="assets/infrastructure/fam-usv-hangar-lift-960.webp 960w, assets/infrastructure/fam-usv-hangar-lift-1600.webp 1600w" sizes="(max-width:820px) 100vw, 55vw" alt="Enclosed USV hangar over the water with its door raised and a vessel resting on a submerged lift cradle beneath an overhead handling gantry" width="1600" height="905" loading="lazy" decoding="async">
         <figcaption>USV Hangar Platform · Illustrative Configuration</figcaption>
       </figure>
       <figure class="mreveal">
-        <img src="assets/systems/support-node.webp" alt="Containerized mobile autonomous support node with landing pad" width="2000" height="1116" loading="lazy" decoding="async">
-        <figcaption>Mobile Autonomous Support Node · Illustrative Configuration</figcaption>
+        <img src="assets/infrastructure/infra-land-ugv-garage-960.webp" srcset="assets/infrastructure/infra-land-ugv-garage-960.webp 960w, assets/infrastructure/infra-land-ugv-garage-1600.webp 1600w" sizes="(max-width:820px) 100vw, 45vw" alt="Uncrewed ground vehicle in a robotic garage with an automated charging connector engaged and a battery exchange manipulator alongside" width="960" height="543" loading="lazy" decoding="async">
+        <figcaption>UGV Support Station · Illustrative Configuration</figcaption>
       </figure>
     </div>
   </div>
@@ -355,7 +360,7 @@
           <ul class="exec-terms"><li>Mission</li><li>Requirements</li><li>Architecture</li><li>Interfaces</li><li>Verification</li></ul>
         </div>
         <div class="exec-media mreveal">
-          <img src="assets/realms/air-2.webp" alt="Advanced aircraft system viewed in plan, representing controlled technical definition" loading="lazy" decoding="async">
+          <img src="assets/company/exec-structural-test-960.webp" srcset="assets/company/exec-structural-test-960.webp 960w, assets/company/exec-structural-test-1600.webp 1600w" sizes="(max-width:920px) 100vw, 50vw" alt="Composite wing spar test article in a load frame, instrumented with strain gauges and displacement sensors wired to data acquisition" width="960" height="543" loading="lazy" decoding="async">
           <span class="ed-tag">Systems Definition</span>
         </div>
       </div>
@@ -370,9 +375,9 @@
           <ul class="exec-terms"><li>Configuration</li><li>Work Packages</li><li>Quality Evidence</li><li>Traceability</li></ul>
           <p style="margin-top:22px"><a class="tlink accent" href="/launchbelt">Explore Launchbelt</a></p>
         </div>
-        <div class="exec-media mreveal">
-          <img src="assets/norse/runestone.webp" alt="Inscribed record, representing the controlled program thread Launchbelt is designed to hold" loading="lazy" decoding="async">
-          <span class="ed-tag">Launchbelt · Digital Thread</span>
+        <div class="exec-media exec-media--ui mreveal">
+          <img class="ui-shot" src="assets/launchbelt/lb-routing-demo-960.webp" srcset="assets/launchbelt/lb-routing-demo-960.webp 960w, assets/launchbelt/lb-routing-demo-1600.webp 1600w" sizes="(max-width:920px) 100vw, 50vw" alt="Launchbelt software screen showing a work package routing view: deterministic eligibility rules applied to four demo suppliers, two eligible and two excluded with stated reasons" width="960" height="540" loading="lazy" decoding="async">
+          <span class="ed-tag">Launchbelt software · demo environment</span>
         </div>
       </div>
     </div>
@@ -387,7 +392,7 @@
           <p style="margin-top:22px"><a class="tlink gold" href="/forge">Explore Forge</a></p>
         </div>
         <div class="exec-media mreveal">
-          <img src="assets/concepts/hero-a.webp" alt="Precision machining in operation" loading="lazy" decoding="async">
+          <img src="assets/forge/forge-production-hall-1600.webp" srcset="assets/forge/forge-production-hall-960.webp 960w, assets/forge/forge-production-hall-1600.webp 1600w" sizes="(max-width:920px) 100vw, 50vw" alt="Organized production hall with machining centers, a glass-walled inspection room, a cure oven, and an uncrewed aircraft fuselage in assembly" width="960" height="411" loading="lazy" decoding="async">
           <span class="ed-tag">Industrial Execution</span>
         </div>
       </div>
@@ -402,8 +407,8 @@
           <ul class="exec-terms"><li>Commissioning</li><li>Field Deployment</li><li>Maintenance</li><li>Lifecycle Support</li></ul>
         </div>
         <div class="exec-media mreveal">
-          <img src="assets/systems/support-node.webp" alt="Autonomous support node concept in a field setting" loading="lazy" decoding="async">
-          <span class="ed-tag">Deployment &amp; Sustainment · Illustrative</span>
+          <img src="assets/infrastructure/fam-expeditionary-platform-960.webp" srcset="assets/infrastructure/fam-expeditionary-platform-960.webp 960w, assets/infrastructure/fam-expeditionary-platform-1600.webp 1600w" sizes="(max-width:920px) 100vw, 50vw" alt="Trailer-mounted infrastructure platform being deployed at dawn with leveling jacks down and a communications mast rising" width="960" height="896" loading="lazy" decoding="async">
+          <span class="ed-tag">Field Deployment · Illustrative</span>
         </div>
       </div>
     </div>
@@ -451,18 +456,33 @@
   </div>
 </section>
 
+<!-- ========================= 07 · BIFROST ========================= -->
+<section class="bleed rule-top" id="bifrost">
+  <div class="bleed-media" aria-hidden="true"><img src="assets/bifrost/bifrost-edge-site-1600.webp" srcset="assets/bifrost/bifrost-edge-site-960.webp 960w, assets/bifrost/bifrost-edge-site-1600.webp 1600w, assets/bifrost/bifrost-edge-site-2400.webp 2400w" sizes="100vw" alt="" loading="lazy" decoding="async" data-plx="0.07" style="object-position:80% 50%"></div>
+  <div class="bleed-scrim" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow reveal">/ 05 — Bifrost</span>
+    <h2 class="display h-xl reveal" data-d="1" style="margin-top:20px;max-width:13ch">Software. Meet the physical world.</h2>
+    <p class="lede reveal" data-d="2" style="margin-top:24px">Bifrost is Asgard's reusable software architecture for complex physical systems, in development. It is designed to connect hardware, edge software, events, state, evidence, intelligence, and the applications built on them.</p>
+    <div class="hero-cta reveal" data-d="3">
+      <a class="btn btn--primary" href="/bifrost">Explore Bifrost <span class="arr">→</span></a>
+    </div>
+  </div>
+  <span class="bleed-tag">Concept visualization · edge compute at a coastal site</span>
+</section>
+
 <!-- ========================= 07 · INDUSTRIAL CAPABILITY ========================= -->
 <section class="section--tight section section--alt rule-top" id="capability" style="padding-bottom:0">
   <div class="wrap">
     <div class="section-head" style="padding-bottom:clamp(48px,5vw,80px)">
-      <span class="eyebrow reveal">/ 05 — Industrial Capability</span>
+      <span class="eyebrow reveal">/ 06 — Industrial Capability</span>
       <h2 class="display h-lg reveal" data-d="1">Built by hand, held to standard.</h2>
       <p class="lede reveal" data-d="2">Work is executed through Asgard capability and the Forge supplier network as it is qualified, under one engineering, quality, and configuration standard.</p>
     </div>
   </div>
 
   <div class="cap-row">
-    <div class="cap-media mreveal"><img src="assets/concepts/hero-b.webp" alt="Advanced manufacturing floor with robotic assembly" loading="lazy" decoding="async"></div>
+    <div class="cap-media mreveal"><img src="assets/forge/forge-fiber-placement-1600.webp" srcset="assets/forge/forge-fiber-placement-960.webp 960w, assets/forge/forge-fiber-placement-1600.webp 1600w" sizes="(max-width:880px) 100vw, 50vw" alt="Automated fiber placement head laying carbon-fiber tows onto a curved wing-skin layup tool" width="1600" height="905" loading="lazy" decoding="async"></div>
     <div class="cap-copy">
       <span class="idx reveal">/ Materials</span>
       <h3 class="display h-md reveal" data-d="1" style="margin-top:14px">Advanced Composites + Thermoplastics</h3>
@@ -472,7 +492,7 @@
   </div>
 
   <div class="cap-row flip">
-    <div class="cap-media mreveal"><img src="assets/realms/robotics.webp" alt="Robotic machining cell in operation" loading="lazy" decoding="async"></div>
+    <div class="cap-media mreveal"><img src="assets/sectors/robotics-assembly-cell-1600.webp" srcset="assets/sectors/robotics-assembly-cell-960.webp 960w, assets/sectors/robotics-assembly-cell-1600.webp 1600w" sizes="(max-width:880px) 100vw, 50vw" alt="Two industrial robot arms in a guarded cell, one holding a machined aerospace bracket while the other installs a fastener over a precision fixture" width="1600" height="905" loading="lazy" decoding="async"></div>
     <div class="cap-copy">
       <span class="idx reveal">/ Precision</span>
       <h3 class="display h-md reveal" data-d="1" style="margin-top:14px">Precision Manufacturing + Robotic Integration</h3>
@@ -482,7 +502,7 @@
   </div>
 
   <div class="cap-row">
-    <div class="cap-media mreveal"><img src="assets/systems/mission-support.webp" alt="Robotic handling fixture and test equipment bay" loading="lazy" decoding="async"></div>
+    <div class="cap-media mreveal"><img src="assets/forge/cap-electrical-integration-1600.webp" srcset="assets/forge/cap-electrical-integration-960.webp 960w, assets/forge/cap-electrical-integration-1600.webp 1600w" sizes="(max-width:880px) 100vw, 50vw" alt="Uncrewed aircraft fuselage section on a test stand with its avionics bay open and a wiring harness routed to a breakout box beside test instruments" width="1600" height="905" loading="lazy" decoding="async"></div>
     <div class="cap-copy">
       <span class="idx reveal">/ Integration</span>
       <h3 class="display h-md reveal" data-d="1" style="margin-top:14px">Electrical + Systems Integration, Inspection + Test</h3>
@@ -498,7 +518,7 @@
   <div class="wrap">
     <div class="grid12" style="align-items:end">
       <div style="grid-column:span 7">
-        <span class="eyebrow eyebrow--gold reveal">/ 06 — Program Discipline</span>
+        <span class="eyebrow eyebrow--gold reveal">/ 07 — Program Discipline</span>
         <h2 class="display h-lg reveal" data-d="1" style="margin-top:20px">Controlled. Traceable. Evidenced.</h2>
       </div>
       <div style="grid-column:9/span 4">
@@ -519,7 +539,7 @@
 <section class="section section--alt rule-top" id="lifecycle" style="padding-inline:0">
   <div class="wrap">
     <div class="section-head" style="padding-bottom:clamp(40px,4vw,64px)">
-      <span class="eyebrow reveal">/ 07 — Program Lifecycle</span>
+      <span class="eyebrow reveal">/ 08 — Program Lifecycle</span>
       <h2 class="display h-lg reveal" data-d="1">Mission to sustainment, one program.</h2>
       <p class="lede reveal" data-d="2">Asgard stays involved across the lifecycle rather than handing the customer from one disconnected organization to another.</p>
     </div>
@@ -552,7 +572,7 @@
 
 <!-- ========================= 10 · CLOSING CTA ========================= -->
 <section class="cta rule-top" id="engage">
-  <img class="cta-bg" src="assets/norse/aurora-forge.webp" alt="" width="2400" height="1018" loading="lazy" decoding="async" data-plx="0.06">
+  <img class="cta-bg" src="assets/norse/aurora-forge.webp" srcset="assets/norse/aurora-forge-960.webp 960w, assets/norse/aurora-forge.webp 2400w" sizes="100vw" alt="" width="2400" height="1018" loading="lazy" decoding="async" data-plx="0.06">
   <div class="wrap">
     <span class="eyebrow reveal">/ Engage</span>
     <div class="cta-lines">
@@ -580,7 +600,7 @@
       <a class="foot-mail" href="mailto:contact@asgardaerospace.com">contact@asgardaerospace.com</a>
     </div>
     <div><h3>Company</h3><ul><li><a href="/company">Company</a></li><li><a href="/domains">Sectors</a></li><li><a href="/capabilities">Capabilities</a></li><li><a href="/contact">Contact</a></li></ul></div>
-    <div><h3>Platform</h3><ul><li><a href="/systems">Autonomous Infrastructure</a></li><li><a href="/launchbelt">Launchbelt</a></li><li><a href="/forge">Forge</a></li><li><a href="/company#model">Operating Model</a></li></ul></div>
+    <div><h3>Platform</h3><ul><li><a href="/systems">Autonomous Infrastructure</a></li><li><a href="/launchbelt">Launchbelt</a></li><li><a href="/forge">Forge</a></li><li><a href="/bifrost">Bifrost</a></li><li><a href="/company#model">Operating Model</a></li></ul></div>
     <div><h3>Engage</h3><ul><li><a href="/contact">Start a Program</a></li><li><a href="/build">Build Hardware</a></li><li><a href="/partner">Join the Forge Network</a></li></ul></div>
   </div>
   <span class="foot-wm" aria-hidden="true">ASGARD</span>
@@ -590,6 +610,6 @@
   </div>
 </footer>
 
-<script src="asgard.js?v=20260831"></script>
+<script src="asgard.js?v=20260918c"></script>
 </body>
 </html>
