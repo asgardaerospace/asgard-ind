@@ -6,6 +6,7 @@
   'use strict';
   const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   const clamp = (v,a,b)=>Math.min(b,Math.max(a,v));
+  const isOnScreen = el => { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < (window.innerHeight||0); };
 
   /* ---------- nav scroll state ---------- */
   const nav = document.getElementById('nav');
@@ -28,10 +29,49 @@
   }
 
   /* ---------- hero/background video: reduced motion + pause control ---------- */
+  /* Videos ship with preload="none" and no autoplay attribute, so nothing downloads during
+     parse and the poster stays the LCP element. Motion starts only when it is wanted:
+     not with reduced motion, Save-Data, or a 2G/3G connection. */
+  const conn = navigator.connection;
+  const constrained = !!(conn && (conn.saveData || /(^|-)2g$|^3g$/.test(conn.effectiveType || '')));
+  const motionOK = !reduce && !constrained;
+  const canStart = v => v.dataset.wanted==='1' && !v.dataset.done && (!v.hasAttribute('data-autoplay') || v.dataset.armed==='1');
+  /* Observe an unclipped ancestor: a video inside .mreveal starts at clip-path inset(0 100% 0 0),
+     and Chromium does not re-run intersection when that clip animates open without a scroll. */
+  const vTarget = new Map();
+  const vio = 'IntersectionObserver' in window ? new IntersectionObserver((es)=>{
+    es.forEach(e=>{
+      const v = vTarget.get(e.target);
+      if(e.isIntersecting){ if(canStart(v)) v.play().catch(()=>{}); }
+      else if(!v.paused){ v.dataset.wanted='1'; v.pause(); }
+    });
+  },{threshold:.15}) : null;
+  const heroVideos = [];
   document.querySelectorAll('video[data-ambient]').forEach(v=>{
     v.setAttribute('aria-hidden','true');
-    if(reduce){ v.removeAttribute('autoplay'); v.pause(); }
-    const host = v.closest('.hero, .bleed, .cta'); if(!host) return;
+    /* WebKit removes the poster when play() is called on a source that fails to load,
+       leaving a black box. Paint the same poster as the element background so a
+       failed video always degrades to the still. */
+    if(v.poster){
+      v.style.backgroundImage = 'url("' + v.poster + '")';
+      v.style.backgroundSize = 'cover';
+      v.style.backgroundRepeat = 'no-repeat';
+      v.style.backgroundPosition = getComputedStyle(v).objectPosition || '50% 50%';
+    }
+    v.dataset.wanted = motionOK ? '1' : '0';
+    if(!motionOK) v.pause();
+    /* play-once clips hold their final frame instead of looping */
+    if(v.hasAttribute('data-once')) v.addEventListener('ended', ()=>{ v.dataset.done='1'; });
+    /* hero clips wait for window load so they never compete with LCP */
+    if(v.hasAttribute('data-autoplay')) heroVideos.push(v);
+    if(vio){
+      const clip = v.closest('.mreveal');
+      const target = clip && clip.parentElement ? clip.parentElement : v;
+      vTarget.set(target, v); vio.observe(target);
+    }
+    v.addEventListener('pause', ()=>{ if(document.visibilityState==='visible' && isOnScreen(v)) v.dataset.wanted='0'; });
+    v.addEventListener('play', ()=>{ v.dataset.wanted='1'; });
+    const host = v.closest('.hero, .bleed, .cta, .cap-media, .fam-media, .mod-media'); if(!host) return;
     const btn = document.createElement('button');
     btn.className = 'media-toggle';
     const sync = () => {
@@ -44,6 +84,41 @@
     v.addEventListener('play', sync); v.addEventListener('pause', sync);
     sync();
     host.appendChild(btn);
+  });
+  const armHeroes = () => heroVideos.forEach(v=>{
+    v.dataset.armed = '1';
+    if(motionOK){ v.preload = 'auto'; if(isOnScreen(v)) v.play().catch(()=>{}); }
+  });
+  if(document.readyState === 'complete') armHeroes(); else window.addEventListener('load', armHeroes, {once:true});
+
+  /* ---------- accessible tabs ([data-tabs]: role=tablist + tabpanels) ---------- */
+  document.querySelectorAll('[data-tabs]').forEach(box=>{
+    const tabs = [...box.querySelectorAll('[role="tab"]')];
+    const planes = [...box.querySelectorAll('.bf-stack i')];
+    planes.forEach((p,k)=>p.style.setProperty('--k', planes.length-1-k));
+    function select(i, focus){
+      tabs.forEach((t,k)=>{
+        const on = k===i;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        const panel = document.getElementById(t.getAttribute('aria-controls'));
+        if(panel) panel.hidden = !on;
+      });
+      planes.forEach((p,k)=>p.classList.toggle('on', k===i));
+      if(focus) tabs[i].focus();
+    }
+    tabs.forEach((t,i)=>{
+      t.addEventListener('click', ()=>select(i));
+      t.addEventListener('keydown', e=>{
+        const n = tabs.length; let j = null;
+        if(e.key==='ArrowDown' || e.key==='ArrowRight') j = (i+1)%n;
+        else if(e.key==='ArrowUp' || e.key==='ArrowLeft') j = (i-1+n)%n;
+        else if(e.key==='Home') j = 0;
+        else if(e.key==='End') j = n-1;
+        if(j!==null){ e.preventDefault(); select(j, true); }
+      });
+    });
+    select(Math.max(0, tabs.findIndex(t=>t.getAttribute('aria-selected')==='true')));
   });
 
   /* ---------- ticker duplicate for seamless loop ---------- */

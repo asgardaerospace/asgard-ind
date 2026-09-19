@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script>document.documentElement.className+=" js";</script>
-<link rel="stylesheet" href="asgard.css?v=20260831">
+<link rel="stylesheet" href="asgard.css?v=20260918b">
 <style>
 /* launchbelt — the digital layer: steel accent, fine-line atmosphere */
 .hero--lb{min-height:88svh}
@@ -36,6 +36,8 @@
   mask-image:radial-gradient(70% 70% at 60% 40%,#000 0%,transparent 85%);
   opacity:.35;
 }
+.lb-evidence{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:center;margin-top:clamp(64px,8vw,120px)}
+@media(max-width:920px){.lb-evidence{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">
 {
@@ -157,6 +159,7 @@
       <a href="/launchbelt" aria-current="page"><span class="n">04</span>Launchbelt</a>
       <a href="/forge"><span class="n">05</span>Forge</a>
       <a href="/capabilities"><span class="n">06</span>Capabilities</a>
+      <a href="/bifrost"><span class="n">07</span>Bifrost</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn--ghost" href="/contact">Start a Program <span class="arr">→</span></a>
@@ -177,7 +180,8 @@
         <li class="menu-item-stagger"><a href="/launchbelt" aria-current="page"><span class="mn">04 /</span><span class="mt">Launchbelt</span></a></li>
         <li class="menu-item-stagger"><a href="/forge"><span class="mn">05 /</span><span class="mt">Forge</span></a></li>
         <li class="menu-item-stagger"><a href="/capabilities"><span class="mn">06 /</span><span class="mt">Capabilities</span></a></li>
-        <li class="menu-item-stagger"><a href="/contact"><span class="mn">07 /</span><span class="mt">Contact</span></a></li>
+        <li class="menu-item-stagger"><a href="/bifrost"><span class="mn">07 /</span><span class="mt">Bifrost</span></a></li>
+        <li class="menu-item-stagger"><a href="/contact"><span class="mn">08 /</span><span class="mt">Contact</span></a></li>
       </ul>
     </nav>
     <div class="menu-aside">
@@ -192,7 +196,7 @@
 
 <!-- ========================= HERO ========================= -->
 <section class="hero hero--lb" id="top">
-  <img class="hero-media" src="assets/norse/aurora-forge.webp" alt="" width="2400" height="1018" fetchpriority="high" aria-hidden="true">
+  <img class="hero-media" src="assets/launchbelt/lb-routing-v2-2400.webp" srcset="assets/launchbelt/lb-routing-v2-960.webp 960w, assets/launchbelt/lb-routing-v2-1600.webp 1600w, assets/launchbelt/lb-routing-v2-2400.webp 2400w" sizes="100vw" alt="" width="2400" height="1074" fetchpriority="high" aria-hidden="true">
   <div class="hero-frame" aria-hidden="true">
     <span class="hf tr">Digital Execution Layer</span>
   </div>
@@ -201,7 +205,7 @@
       <div class="hero-content">
         <span class="eyebrow eyebrow--steel reveal">/ 04 — Launchbelt Orchestration Engine</span>
         <h1 class="display h-xl reveal" data-d="1">The digital thread connecting technical intent to physical execution.</h1>
-        <p class="lede reveal" data-d="2">A complex system passes through many states between a mission requirement and a maintained, fielded asset. Launchbelt connects those states — so what was required, what was designed, what was built, and what is deployed remain one controlled, traceable thread.</p>
+        <p class="lede reveal" data-d="2">A complex system passes through many states between a mission requirement and a maintained, fielded asset. Launchbelt connects those states, so what was required, what was designed, what was built, and what is deployed remain one controlled, traceable thread.</p>
         <div class="hero-cta reveal" data-d="3">
           <a class="btn btn--primary" href="/contact">Start a Program <span class="arr">→</span></a>
           <a class="btn" href="/forge">Explore Forge <span class="arr">→</span></a>
@@ -262,40 +266,29 @@
         </ul>
       </div>
       <div class="reveal" data-d="2">
-        <div class="window">
+        <figure class="window lb-shot">
           <div class="window-bar">
             <div class="dots"><i></i><i></i><i></i></div>
-            <span class="ttl">launchbelt · program thread</span>
-            <span class="live">Concept</span>
+            <span class="ttl">launchbelt · work package routing</span>
           </div>
-          <div class="window-body">
-            <div class="lb-row">
-              <div class="lb-tile">
-                <span class="lab">Program Thread</span>
-                <div class="val">EXAMPLE-01</div>
-                <div class="lb-prog"><i id="lb-prog"></i></div>
-                <span class="lb-sub">Released → Built · example state</span>
-              </div>
-              <div class="lb-tile">
-                <span class="lab">Work Packages</span>
-                <div class="val accent">Scoped</div>
-                <span class="lb-sub">In work · verified</span>
-              </div>
-              <div class="lb-tile">
-                <span class="lab">Network Capacity</span>
-                <div class="lb-bars" id="lb-bars"></div>
-              </div>
-            </div>
-            <div>
-              <div class="lb-line"><span>EXAMPLE-01 · Frame Structure · Machining</span><span class="ok">In Work</span></div>
-              <div class="lb-line"><span>EXAMPLE-02 · Enclosure Panels · Composites</span><span class="ok">Inspected</span></div>
-              <div class="lb-line"><span>EXAMPLE-03 · Harness &amp; Power · Electrical</span><span class="gold">In Verification</span></div>
-              <div class="lb-line"><span>EXAMPLE-04 · Servicing Arm · Integration</span><span>Queued</span></div>
-            </div>
-          </div>
-        </div>
-        <p class="mock-note">Interface concept · not a live system · states shown are illustrative and are not Asgard performance data</p>
+          <img src="assets/launchbelt/lb-routing-v2-1600.webp" srcset="assets/launchbelt/lb-routing-v2-960.webp 960w, assets/launchbelt/lb-routing-v2-1600.webp 1600w, assets/launchbelt/lb-routing-v2-2400.webp 2400w" sizes="(max-width:920px) 100vw, 50vw" alt="Launchbelt routing screen for a work package: five eligibility rules evaluated against four suppliers, two eligible and two excluded, each exclusion shown with its reason" width="1600" height="716" loading="lazy" decoding="async">
+        </figure>
+        <p class="mock-note">Launchbelt interface shown with fictional program data</p>
       </div>
+    </div>
+    <div class="lb-evidence reveal" data-d="1">
+      <div class="lb-ev-copy">
+        <span class="eyebrow eyebrow--steel">/ Execution Evidence</span>
+        <h3 class="display h-md" style="margin-top:16px">The document chain and every attributed event, in one record.</h3>
+        <p class="lede" style="font-size:.98rem;margin-top:16px">Statements of work, drawings, quotes, job steps, and approvals linked across the RFQ, work package, and job, each change attributed to the person who made it.</p>
+      </div>
+      <figure class="window lb-shot">
+        <div class="window-bar">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <span class="ttl">launchbelt · job evidence</span>
+        </div>
+        <img src="assets/launchbelt/lb-evidence-v4-1600.webp" srcset="assets/launchbelt/lb-evidence-v4-960.webp 960w, assets/launchbelt/lb-evidence-v4-1600.webp 1600w, assets/launchbelt/lb-evidence-v4-2400.webp 2400w" sizes="(max-width:920px) 100vw, 62vw" alt="Launchbelt job evidence screen: the RFQ statement of work and part drawing in a document chain, followed by an attributed, time-stamped history of uploads, job steps, and quote decisions" width="1600" height="900" loading="lazy" decoding="async">
+      </figure>
     </div>
   </div>
 </section>
@@ -317,7 +310,7 @@
 
 <!-- ========================= CTA ========================= -->
 <section class="cta rule-top" id="engage">
-  <img class="cta-bg" src="assets/norse/aurora-forge.webp" alt="" width="2400" height="1018" loading="lazy" decoding="async" data-plx="0.06">
+  <img class="cta-bg" src="assets/norse/aurora-forge.webp" srcset="assets/norse/aurora-forge-960.webp 960w, assets/norse/aurora-forge.webp 2400w" sizes="100vw" alt="" width="2400" height="1018" loading="lazy" decoding="async" data-plx="0.06">
   <div class="wrap">
     <span class="eyebrow reveal">/ Engage</span>
     <h2 class="display h-xl reveal" data-d="1">Put your program on the thread.</h2>
@@ -342,16 +335,16 @@
       <a class="foot-mail" href="mailto:contact@asgardaerospace.com">contact@asgardaerospace.com</a>
     </div>
     <div><h3>Company</h3><ul><li><a href="/company">Company</a></li><li><a href="/domains">Sectors</a></li><li><a href="/capabilities">Capabilities</a></li><li><a href="/contact">Contact</a></li></ul></div>
-    <div><h3>Platform</h3><ul><li><a href="/systems">Autonomous Infrastructure</a></li><li><a href="/launchbelt">Launchbelt</a></li><li><a href="/forge">Forge</a></li><li><a href="/company#model">Operating Model</a></li></ul></div>
+    <div><h3>Platform</h3><ul><li><a href="/systems">Autonomous Infrastructure</a></li><li><a href="/launchbelt">Launchbelt</a></li><li><a href="/forge">Forge</a></li><li><a href="/bifrost">Bifrost</a></li><li><a href="/company#model">Operating Model</a></li></ul></div>
     <div><h3>Engage</h3><ul><li><a href="/contact">Start a Program</a></li><li><a href="/build">Build Hardware</a></li><li><a href="/partner">Join the Forge Network</a></li></ul></div>
   </div>
   <span class="foot-wm" aria-hidden="true">ASGARD</span>
   <div class="foot-bottom">
     <span>© 2026 Asgard Industries · Autonomous Infrastructure &amp; Industrial Execution</span>
-    <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · Air · Maritime · Land · Robotics · Space</span>
+    <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · Air · Maritime · Land · Space · Robotics · Autonomous Infrastructure</span>
   </div>
 </footer>
 
-<script src="asgard.js?v=20260831"></script>
+<script src="asgard.js?v=20260918d"></script>
 </body>
 </html>
