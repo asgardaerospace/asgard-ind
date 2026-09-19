@@ -19,9 +19,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" media="(max-aspect-ratio: 4/5)" imagesrcset="assets/build/build-release-to-assembly-portrait-480.webp 480w, assets/build/build-release-to-assembly-portrait-645.webp 645w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" media="(min-aspect-ratio: 801/1000)" imagesrcset="assets/build/build-release-to-assembly-960.webp 960w, assets/build/build-release-to-assembly-1600.webp 1600w, assets/build/build-release-to-assembly-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
 <script>document.documentElement.className+=" js";</script>
-<link rel="stylesheet" href="asgard.css?v=20260831">
-<link rel="stylesheet" href="build.css?v=20260831">
+<link rel="stylesheet" href="asgard.css?v=20260918b">
+<link rel="stylesheet" href="build.css?v=20260918b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -143,6 +145,7 @@
       <a href="/launchbelt"><span class="n">04</span>Launchbelt</a>
       <a href="/forge"><span class="n">05</span>Forge</a>
       <a href="/capabilities"><span class="n">06</span>Capabilities</a>
+      <a href="/bifrost"><span class="n">07</span>Bifrost</a>
     </nav>
     <div class="nav-cta">
       <a class="btn btn--ghost" href="/contact">Start a Program <span class="arr">→</span></a>
@@ -163,7 +166,8 @@
         <li class="menu-item-stagger"><a href="/launchbelt"><span class="mn">04 /</span><span class="mt">Launchbelt</span></a></li>
         <li class="menu-item-stagger"><a href="/forge"><span class="mn">05 /</span><span class="mt">Forge</span></a></li>
         <li class="menu-item-stagger"><a href="/capabilities"><span class="mn">06 /</span><span class="mt">Capabilities</span></a></li>
-        <li class="menu-item-stagger"><a href="/contact"><span class="mn">07 /</span><span class="mt">Contact</span></a></li>
+        <li class="menu-item-stagger"><a href="/bifrost"><span class="mn">07 /</span><span class="mt">Bifrost</span></a></li>
+        <li class="menu-item-stagger"><a href="/contact"><span class="mn">08 /</span><span class="mt">Contact</span></a></li>
       </ul>
     </nav>
     <div class="menu-aside">
@@ -177,9 +181,10 @@
 
 <!-- ========================= HERO ========================= -->
 <section class="hero hero--build" id="top" data-screen-label="Hero">
-  <video class="hero-media" data-ambient autoplay muted loop playsinline preload="metadata" poster="assets/hero-build.webp">
-    <source src="assets/hero-build.mp4" type="video/mp4">
-  </video>
+  <picture>
+    <source media="(max-aspect-ratio: 4/5)" srcset="assets/build/build-release-to-assembly-portrait-480.webp 480w, assets/build/build-release-to-assembly-portrait-645.webp 645w" sizes="100vw">
+    <img class="hero-media" src="assets/build/build-release-to-assembly-2400.webp" srcset="assets/build/build-release-to-assembly-960.webp 960w, assets/build/build-release-to-assembly-1600.webp 1600w, assets/build/build-release-to-assembly-2400.webp 2400w" sizes="100vw" alt="" width="2400" height="1029" fetchpriority="high" decoding="async" aria-hidden="true">
+  </picture>
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -211,7 +216,7 @@
           </div>
           <div class="req-body">
             <div class="req-head">
-              <span class="rref">EXAMPLE-BUILD</span>
+              <span class="rref">HLV-24100</span>
               <span class="rstage">Proto → LRIP</span>
               <span class="rtitle">Composite UAV Airframe</span>
               <span class="rmeta">Aerospace · Program Quality Gates</span>
@@ -224,7 +229,7 @@
             </div>
           </div>
         </div>
-        <p class="mock-note">Interface concept · not a live system · states shown are illustrative and are not Asgard performance data</p>
+        <p class="mock-note">Launchbelt interface concept shown with fictional program data</p>
       </div>
     </div>
   </div>
@@ -330,7 +335,7 @@
           <div class="orch-in">
             <div>
               <span class="oi-tag">Input · 1 Model</span>
-              <b>EXAMPLE-BUILD · UAV Airframe Assembly</b>
+              <b>HLV-24100 · UAV Airframe Assembly</b>
               <span class="oi-meta">Aerospace · Program Quality Gates</span>
             </div>
             <span class="oi-stat">Ingested</span>
@@ -367,7 +372,7 @@
             </div>
             <div class="wp" style="--w:100%">
               <span class="wpid">WP-04</span>
-              <b class="wpname">Fastener Set</b>
+              <b class="wpname">Fitting Set</b>
               <span class="wpproc">Precision Machining · AT-03</span>
               <span class="wpstat ok"><i></i>Complete</span>
               <div class="orch-prog"><i></i></div>
@@ -390,7 +395,7 @@
           </div>
         </div>
       </div>
-      <p class="mock-note">Interface concept · not a live system · states shown are illustrative and are not Asgard performance data</p>
+      <p class="mock-note">Launchbelt interface concept shown with fictional program data</p>
     </div>
   </div>
 </section>
@@ -412,15 +417,14 @@
         </ul>
       </div>
       <div class="reveal" data-d="2">
-        <div class="window">
+        <figure class="window lb-shot">
           <div class="window-bar">
             <div class="dots"><i></i><i></i><i></i></div>
-            <span class="ttl">launchbelt · program console</span>
-            <span class="live">Concept</span>
+            <span class="ttl">launchbelt · job evidence</span>
           </div>
-          <img src="assets/norse/runestone.webp" alt="Inscribed record, representing the controlled program thread Launchbelt is designed to hold" loading="lazy" decoding="async" style="display:block;width:100%">
-        </div>
-        <p class="mock-note">Interface concept · not a live system · states shown are illustrative and are not Asgard performance data</p>
+          <img src="assets/launchbelt/lb-evidence-v4-1600.webp" srcset="assets/launchbelt/lb-evidence-v4-960.webp 960w, assets/launchbelt/lb-evidence-v4-1600.webp 1600w, assets/launchbelt/lb-evidence-v4-2400.webp 2400w" sizes="(max-width:920px) 100vw, 50vw" alt="Launchbelt job evidence screen: the RFQ statement of work and part drawing in a document chain, followed by an attributed, time-stamped history of uploads, job steps, and quote decisions" width="1600" height="900" loading="lazy" decoding="async">
+        </figure>
+        <p class="mock-note">Launchbelt interface shown with fictional program data</p>
       </div>
     </div>
   </div>
@@ -522,14 +526,14 @@
 
 <!-- ========================= TAGLINE BAND ========================= -->
 <div class="tagband">
-  <img class="tagband-bg" src="assets/norse/runestone.webp" alt="" width="1600" height="914" loading="lazy" decoding="async">
+  <img class="tagband-bg" src="assets/norse/runestone.webp" srcset="assets/norse/runestone-960.webp 960w, assets/norse/runestone.webp 1600w" sizes="100vw" alt="" width="1600" height="914" loading="lazy" decoding="async">
   <div class="t reveal">Your Spec. <em>Our Industrial Base.</em></div>
   <div class="sub reveal" data-d="1">Agnostic build · compliance built in · prototype to full rate</div>
 </div>
 
 <!-- ========================= 06 · START A BUILD ========================= -->
 <section class="cta rule-top" id="start" data-screen-label="Start a Build">
-  <img class="cta-bg" src="assets/norse/aurora-forge.webp" alt="" width="2400" height="1018" loading="lazy" decoding="async">
+  <img class="cta-bg" src="assets/norse/aurora-forge.webp" srcset="assets/norse/aurora-forge-960.webp 960w, assets/norse/aurora-forge.webp 2400w" sizes="100vw" alt="" width="2400" height="1018" loading="lazy" decoding="async">
   <div class="wrap">
     <span class="eyebrow reveal">/ Start a Build</span>
     <h2 class="display h-xl reveal" data-d="1">Bring us what you are building.</h2>
@@ -560,7 +564,7 @@
       <a class="foot-mail" href="mailto:contact@asgardaerospace.com">contact@asgardaerospace.com</a>
     </div>
     <div><h3>Company</h3><ul><li><a href="/company">Company</a></li><li><a href="/domains">Sectors</a></li><li><a href="/capabilities">Capabilities</a></li><li><a href="/contact">Contact</a></li></ul></div>
-    <div><h3>Platform</h3><ul><li><a href="/systems">Autonomous Infrastructure</a></li><li><a href="/launchbelt">Launchbelt</a></li><li><a href="/forge">Forge</a></li><li><a href="/company#model">Operating Model</a></li></ul></div>
+    <div><h3>Platform</h3><ul><li><a href="/systems">Autonomous Infrastructure</a></li><li><a href="/launchbelt">Launchbelt</a></li><li><a href="/forge">Forge</a></li><li><a href="/bifrost">Bifrost</a></li><li><a href="/company#model">Operating Model</a></li></ul></div>
     <div><h3>Engage</h3><ul><li><a href="/contact">Start a Program</a></li><li><a href="/build">Build Hardware</a></li><li><a href="/partner">Join the Forge Network</a></li></ul></div>
   </div>
   <span class="foot-wm" aria-hidden="true">ASGARD</span>
@@ -570,6 +574,6 @@
   </div>
 </footer>
 
-<script src="asgard.js?v=20260831"></script>
+<script src="asgard.js?v=20260918d"></script>
 </body>
 </html>
