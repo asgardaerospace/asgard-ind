@@ -19,14 +19,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" media="(max-aspect-ratio: 4/5)" imagesrcset="assets/home/home-integration-hall-portrait-480.webp 480w, assets/home/home-integration-hall-portrait-645.webp 645w" imagesizes="100vw" fetchpriority="high">
-<link rel="preload" as="image" media="(min-aspect-ratio: 801/1000)" imagesrcset="assets/home/home-integration-hall-960.webp 960w, assets/home/home-integration-hall-1600.webp 1600w, assets/home/home-integration-hall-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" media="(max-aspect-ratio: 4/5)" imagesrcset="assets/video/home-rune-forge-portrait-480.webp 480w, assets/video/home-rune-forge-portrait-645.webp 645w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" media="(min-aspect-ratio: 801/1000)" href="assets/video/home-rune-forge-poster.webp" fetchpriority="high">
 <script>document.documentElement.className+=" js";</script>
 <link rel="stylesheet" href="asgard.css?v=20260918b">
 <style>
 /* ---------- homepage-specific ---------- */
 .hero--home .hero-grid{grid-template-columns:1fr;align-items:end}
 .hero--home .hero-media{object-position:18% 50%;opacity:.78}
+/* The rune-forge clip is an ultra-wide band: a portrait phone would crop it to a narrow
+   slice, so those viewports keep an art-directed still (the opening raven rune) instead.
+   The clip is preload="none" and only plays when it is on screen, so hiding it costs
+   nothing; the still's real srcset lives on a portrait-only <source>. */
+.hero--home .hero-still{display:none}
+@media (max-aspect-ratio:4/5){
+  .hero--home .hero-clip,.hero--home .media-toggle{display:none}
+  .hero--home .hero-still{display:block;object-position:50% 50%}
+}
 .hero--home .hero-content{max-width:1100px}
 .hero--home .lede{max-width:46ch}
 
@@ -188,9 +197,13 @@
 
 <!-- ========================= 01 · IMMERSIVE HERO ========================= -->
 <section class="hero hero--home" id="top">
+  <video class="hero-media hero-clip" data-ambient data-autoplay data-once muted playsinline preload="none" poster="assets/video/home-rune-forge-poster.webp" width="1600" height="686">
+    <source src="assets/video/home-rune-forge-960.mp4" type="video/mp4" media="(max-width:760px)">
+    <source src="assets/video/home-rune-forge-1600.mp4" type="video/mp4">
+  </video>
   <picture>
-    <source media="(max-aspect-ratio: 4/5)" srcset="assets/home/home-integration-hall-portrait-480.webp 480w, assets/home/home-integration-hall-portrait-645.webp 645w" sizes="100vw">
-    <img class="hero-media" src="assets/home/home-integration-hall-2400.webp" srcset="assets/home/home-integration-hall-960.webp 960w, assets/home/home-integration-hall-1600.webp 1600w, assets/home/home-integration-hall-2400.webp 2400w" sizes="100vw" alt="" width="2400" height="1029" fetchpriority="high" decoding="async" aria-hidden="true">
+    <source media="(max-aspect-ratio: 4/5)" srcset="assets/video/home-rune-forge-portrait-480.webp 480w, assets/video/home-rune-forge-portrait-645.webp 645w" sizes="100vw">
+    <img class="hero-media hero-still" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="645" height="1152" decoding="async" aria-hidden="true">
   </picture>
   <div class="hero-frame" aria-hidden="true">
     <span class="hf tl">Asgard Industries</span>
@@ -610,6 +623,6 @@
   </div>
 </footer>
 
-<script src="asgard.js?v=20260920a"></script>
+<script src="asgard.js?v=20260920b"></script>
 </body>
 </html>

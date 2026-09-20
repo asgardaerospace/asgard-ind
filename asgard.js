@@ -86,10 +86,15 @@
     host.appendChild(btn);
   });
   const armHeroes = () => heroVideos.forEach(v=>{
+    /* A hero clip can be art-directed out of a viewport (the home hero shows a portrait
+       still instead on tall screens). Never arm one that is not rendered, or preload='auto'
+       would download megabytes of video that is never shown. Re-armed on resize/rotate. */
+    if(!v.getClientRects().length) return;
     v.dataset.armed = '1';
     if(motionOK){ v.preload = 'auto'; if(isOnScreen(v)) v.play().catch(()=>{}); }
   });
   if(document.readyState === 'complete') armHeroes(); else window.addEventListener('load', armHeroes, {once:true});
+  let armT; window.addEventListener('resize', ()=>{ clearTimeout(armT); armT = setTimeout(armHeroes, 250); });
 
   /* ---------- accessible tabs ([data-tabs]: role=tablist + tabpanels) ---------- */
   document.querySelectorAll('[data-tabs]').forEach(box=>{
