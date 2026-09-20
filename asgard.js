@@ -130,10 +130,24 @@
   }
 
   /* ---------- reveal on scroll (text, lines, image masks) ---------- */
+  /* A .mreveal starts at clip-path inset(0 100% 0 0), and Chromium reports
+     intersectionRatio 0 for an element its own clip-path has collapsed, so it never
+     reaches the threshold and the mask never opens. Observe the unclipped parent
+     instead and reveal the children it carries (same reason as vio above). */
+  const revealFor = new Map();
   const io = new IntersectionObserver((es)=>{
-    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+    es.forEach(e=>{
+      if(!e.isIntersecting) return;
+      (revealFor.get(e.target)||[]).forEach(el=>el.classList.add('in'));
+      io.unobserve(e.target); revealFor.delete(e.target);
+    });
   },{threshold:.14, rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.reveal, .mreveal, .linegrow').forEach(el=>io.observe(el));
+  document.querySelectorAll('.reveal, .mreveal, .linegrow').forEach(el=>{
+    const target = el.classList.contains('mreveal') && el.parentElement ? el.parentElement : el;
+    const queued = revealFor.get(target);
+    if(queued){ queued.push(el); return; }
+    revealFor.set(target, [el]); io.observe(target);
+  });
 
   /* ---------- count-up ---------- */
   function countUp(el){
